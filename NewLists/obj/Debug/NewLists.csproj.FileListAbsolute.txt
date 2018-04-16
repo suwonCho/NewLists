@@ -1,0 +1,9 @@
+D:\_Task\_Personal\NewLists\NewLists\bin\Debug\NewLists.exe
+D:\_Task\_Personal\NewLists\NewLists\bin\Debug\NewLists.pdb
+D:\_Task\_Personal\NewLists\NewLists\obj\Debug\NewLists.csprojResolveAssemblyReference.cache
+D:\_Task\_Personal\NewLists\NewLists\obj\Debug\NewLists.Form1.resources
+D:\_Task\_Personal\NewLists\NewLists\obj\Debug\NewLists.Properties.Resources.resources
+D:\_Task\_Personal\NewLists\NewLists\obj\Debug\NewLists.csproj.GenerateResource.Cache
+D:\_Task\_Personal\NewLists\NewLists\obj\Debug\NewLists.exe
+D:\_Task\_Personal\NewLists\NewLists\obj\Debug\NewLists.pdb
+D:\_Task\_Personal\NewLists\NewLists\bin\Debug\NewLists.exe.config

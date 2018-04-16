@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telegram.Massenger</name>
+    </assembly>
+    <members>
+        <member name="M:Telegram.Massenger.AuthForm.btnReqNumber_Click(System.Object,System.EventArgs)">
+            <summary>
+            인증번호 요청
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Telegram.Massenger.AuthForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Telegram.Massenger.AuthForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Telegram.Massenger.AuthForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Telegram.Massenger.Client">
+            <summary>
+            텔레그램 메신져 관리 클라이언트
+            </summary>
+        </member>
+        <!-- "F:Telegram.Massenger.Client._phoneNumber" 멤버에 대해 잘못된 형식의 XML 주석은 무시됩니다. -->
+        <member name="F:Telegram.Massenger.Client._apiId">
+            <summary>
+            텔레그램 App설정의 api_id
+            </summary>
+        </member>
+        <member name="F:Telegram.Massenger.Client._apiHash">
+            <summary>
+            텔레그램 App설정의 api_hash
+            </summary>
+        </member>
+        <member name="F:Telegram.Massenger.Client._parentForm">
+            <summary>
+            인증번호 입력을 위해 창을 띄울경우 부모폼, 없을경우 화면 가운데 띄운다.
+            </summary>
+        </member>
+        <member name="F:Telegram.Massenger.Client._contacts">
+            <summary>
+            연락처 데이터 테이블
+            </summary>
+        </member>
+        <member name="P:Telegram.Massenger.Client.Contacts">
+            <summary>
+            연락처 데이터 테이블
+            </summary>
+        </member>
+        <member name="P:Telegram.Massenger.Client.ChatList">
+            <summary>
+            채팅 목록을 가지고 온다
+            </summary>
+        </member>
+        <!-- "M:Telegram.Massenger.Client.#ctor(System.String,System.Int32,System.String,System.Windows.Forms.Form)" 멤버에 대해 잘못된 형식의 XML 주석은 무시됩니다. -->
+        <member name="M:Telegram.Massenger.Client.Connect(System.Boolean)">
+            <summary>
+            서버와 연결을 시작합니다.
+            </summary>
+        </member>
+        <member name="M:Telegram.Massenger.Client.isAuth">
+            <summary>
+            인증여부를 확인합니다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Massenger.Client.isAuth(System.Boolean)">
+            <summary>
+            인증여부를 확인합니다.
+            </summary>
+            <param name="isThrowException">미인증일 경우 Exception 발생 여부</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Massenger.Client.SendCodeRequest">
+            <summary>
+            핸드폰 텔레그램으로 인증번호를 요청 합니다.
+            </summary>
+            <returns>hash code</returns>
+        </member>
+        <member name="M:Telegram.Massenger.Client.MakeAuthAsync(System.String,System.String)">
+            <summary>
+            인증 요청 처리를 한다.
+            </summary>
+            <param name="hash">인증 요청(SendCodeRequest) 시 생성된 코드</param>
+            <param name="code">핸드폰 텔래그램으로 받은 코드</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Massenger.Client.AuthFormOpen">
+            <summary>
+            인증창을 띄웁니다.
+            </summary>
+            <param name="PhoneNumber"></param>
+        </member>
+        <member name="M:Telegram.Massenger.Client.ContactsGet">
+            <summary>
+            연락처를 가져 온다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Massenger.Client.UserInfoGetFromContact(Telegram.Massenger.enContactInfoType,System.String)">
+            <summary>
+            연락처에서 사용자 정보를 조회 한다.
+            </summary>
+            <param name="ctype">조회 할 필드</param>
+            <param name="info">조회 할 정보</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Massenger.Client.SendMessageByContacts(System.Data.DataRow,System.String)">
+            <summary>
+            사용자에게 메시지를 보낸다. by contact datarow
+            </summary>
+            <param name="info"></param>
+            <param name="msg">보낼 메시지</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Massenger.Client.SendMessageByContacts(Telegram.Massenger.enContactInfoType,System.String,System.String)">
+            <summary>
+            사용자에게 메시지를 보낸다.
+            </summary>
+            <param name="ctype">조회 할 필드</param>
+            <param name="info">조회 할 정보</param>
+            <param name="msg">보낼 메시지</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Massenger.Client.ChatListGet">
+            <summary>
+            채팅 리스트를 가지고 온다.(개인 채팅은 제외)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Massenger.Client.SendMessageToChat(System.Data.DataRow,System.String)">
+            <summary>
+            채팅방에 메시지를 보낸다.
+            </summary>
+            <param name="info"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Massenger.Client.ChatGetFromChats(Telegram.Massenger.enChatsInfoType,System.String)">
+            <summary>
+            채팅방을 조건으로 조회 한다.
+            </summary>
+            <param name="ctype"></param>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telegram.Massenger.Client.SendMessageToChat(Telegram.Massenger.enChatsInfoType,System.String,System.String)">
+            <summary>
+            채팅방에 메시지를 보낸다.
+            </summary>
+            <param name="ctype"></param>
+            <param name="info"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Telegram.Massenger.enContactInfoType">
+            <summary>
+            연락처 조회 필드
+            </summary>
+        </member>
+        <member name="F:Telegram.Massenger.enContactInfoType.id">
+            <summary>
+            고유넘버
+            </summary>
+        </member>
+        <member name="F:Telegram.Massenger.enContactInfoType.name">
+            <summary>
+            사용자 이름(first_name, last_name like 조건으로)
+            </summary>
+        </member>
+        <member name="F:Telegram.Massenger.enContactInfoType.username">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="F:Telegram.Massenger.enContactInfoType.phoneNumber">
+            <summary>
+            전화 번호로 조회-국가코드 포함 ex)8210~~~~~~
+            </summary>
+        </member>
+        <member name="F:Telegram.Massenger.enChatsInfoType.id">
+            <summary>
+            고유넘버
+            </summary>
+        </member>
+        <member name="F:Telegram.Massenger.enChatsInfoType.title">
+            <summary>
+            채팅방 이름
+            </summary>
+        </member>
+        <member name="M:Telegram.Massenger.fnc.PhoneNumberInit(System.String)">
+            <summary>
+            텔레그램에서 메시지 보낼때 사용하는 폰번호를 수정한다.
+            </summary>
+            <param name="phonenumber"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

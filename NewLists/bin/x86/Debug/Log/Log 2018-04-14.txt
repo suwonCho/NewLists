@@ -1,0 +1,85 @@
+[00:09:11] 을(를) 시작 합니다.
+[00:09:35] 을(를) 시작 합니다.
+[00:10:02] 을(를) 시작 합니다.
+[00:11:13] 을(를) 종료 합니다.
+[00:14:25] 을(를) 시작 합니다.
+[00:14:39] 을(를) 시작 합니다.
+[00:15:20] 을(를) 시작 합니다.
+[00:17:18] 을(를) 시작 합니다.
+[00:17:47] 을(를) 시작 합니다.
+[00:18:01] 을(를) 종료 합니다.
+[00:18:31] 을(를) 시작 합니다.
+[00:22:13] 을(를) 종료 합니다.
+[15:51:46] 을(를) 시작 합니다.
+[15:54:11] 을(를) 시작 합니다.
+[15:54:26] 을(를) 종료 합니다.
+[15:54:30] 을(를) 시작 합니다.
+[15:56:47] 을(를) 종료 합니다.
+[15:56:52] 을(를) 시작 합니다.
+[15:57:00] 을(를) 종료 합니다.
+[15:59:56] 을(를) 시작 합니다.
+[16:01:15] 을(를) 시작 합니다.
+[16:02:38] 을(를) 시작 합니다.
+[16:02:40] Error in TelegramMsgSend : AUTH_KEY_UNREGISTERED - System.InvalidOperationException: AUTH_KEY_UNREGISTERED
+   위치: TLSharp.Core.Network.MtProtoSender.HandleRpcResult(UInt64 messageId, Int32 sequence, BinaryReader messageReader, TLMethod request) 파일 d:\_TASK\_FUNCTION\NewFunction\Telegram\TLSharp.Core\Network\MtProtoSender.cs:줄 301
+   위치: TLSharp.Core.Network.MtProtoSender.processMessage(UInt64 messageId, Int32 sequence, BinaryReader messageReader, TLMethod request) 파일 d:\_TASK\_FUNCTION\NewFunction\Telegram\TLSharp.Core\Network\MtProtoSender.cs:줄 193
+   위치: TLSharp.Core.Network.MtProtoSender.<Receive>d__9.MoveNext() 파일 d:\_TASK\_FUNCTION\NewFunction\Telegram\TLSharp.Core\Network\MtProtoSender.cs:줄 144
+--- 예외가 throw된 이전 위치의 스택 추적 끝 ---
+   위치: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   위치: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   위치: System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   위치: TLSharp.Core.TelegramClient.<SendRequestAsync>d__15`1.MoveNext() 파일 d:\_TASK\_FUNCTION\NewFunction\Telegram\TLSharp.Core\TelegramClient.cs:줄 176
+--- 예외가 throw된 이전 위치의 스택 추적 끝 ---
+   위치: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   위치: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   위치: System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   위치: TLSharp.Core.TelegramClient.<GetUserDialogsAsync>d__19.MoveNext() 파일 d:\_TASK\_FUNCTION\NewFunction\Telegram\TLSharp.Core\TelegramClient.cs:줄 220
+--- 예외가 throw된 이전 위치의 스택 추적 끝 ---
+   위치: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   위치: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   위치: System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   위치: Telegram.Massenger.Client.<ChatListGet>d__22.MoveNext() 파일 D:\_TASK\_FUNCTION\NewFunction\Telegram\Telegram.Massenger\Client.cs:줄 293
+--- 예외가 throw된 이전 위치의 스택 추적 끝 ---
+   위치: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   위치: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   위치: System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   위치: Telegram.Massenger.Client.<SendMessageToChat>d__25.MoveNext() 파일 D:\_TASK\_FUNCTION\NewFunction\Telegram\Telegram.Massenger\Client.cs:줄 379
+--- 예외가 throw된 이전 위치의 스택 추적 끝 ---
+   위치: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   위치: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   위치: System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   위치: NewLists.frmNewLists.<TelegramMsgSend>d__16.MoveNext() 파일 D:\_TASK\_Personal\NewLists\NewLists\frmNewLists.cs:줄 328
+[16:03:09] 을(를) 종료 합니다.
+[16:03:14] 을(를) 시작 합니다.
+[16:03:15] Error in TelegramMsgSend : AUTH_KEY_UNREGISTERED - System.InvalidOperationException: AUTH_KEY_UNREGISTERED
+   위치: TLSharp.Core.Network.MtProtoSender.HandleRpcResult(UInt64 messageId, Int32 sequence, BinaryReader messageReader, TLMethod request) 파일 d:\_TASK\_FUNCTION\NewFunction\Telegram\TLSharp.Core\Network\MtProtoSender.cs:줄 301
+   위치: TLSharp.Core.Network.MtProtoSender.processMessage(UInt64 messageId, Int32 sequence, BinaryReader messageReader, TLMethod request) 파일 d:\_TASK\_FUNCTION\NewFunction\Telegram\TLSharp.Core\Network\MtProtoSender.cs:줄 193
+   위치: TLSharp.Core.Network.MtProtoSender.<Receive>d__9.MoveNext() 파일 d:\_TASK\_FUNCTION\NewFunction\Telegram\TLSharp.Core\Network\MtProtoSender.cs:줄 144
+--- 예외가 throw된 이전 위치의 스택 추적 끝 ---
+   위치: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   위치: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   위치: System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   위치: TLSharp.Core.TelegramClient.<SendRequestAsync>d__15`1.MoveNext() 파일 d:\_TASK\_FUNCTION\NewFunction\Telegram\TLSharp.Core\TelegramClient.cs:줄 176
+--- 예외가 throw된 이전 위치의 스택 추적 끝 ---
+   위치: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   위치: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   위치: System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   위치: TLSharp.Core.TelegramClient.<GetUserDialogsAsync>d__19.MoveNext() 파일 d:\_TASK\_FUNCTION\NewFunction\Telegram\TLSharp.Core\TelegramClient.cs:줄 220
+--- 예외가 throw된 이전 위치의 스택 추적 끝 ---
+   위치: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   위치: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   위치: System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   위치: Telegram.Massenger.Client.<ChatListGet>d__22.MoveNext() 파일 D:\_TASK\_FUNCTION\NewFunction\Telegram\Telegram.Massenger\Client.cs:줄 293
+--- 예외가 throw된 이전 위치의 스택 추적 끝 ---
+   위치: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   위치: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   위치: System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   위치: Telegram.Massenger.Client.<SendMessageToChat>d__25.MoveNext() 파일 D:\_TASK\_FUNCTION\NewFunction\Telegram\Telegram.Massenger\Client.cs:줄 379
+--- 예외가 throw된 이전 위치의 스택 추적 끝 ---
+   위치: System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   위치: System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   위치: System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   위치: NewLists.frmNewLists.<TelegramMsgSend>d__16.MoveNext() 파일 D:\_TASK\_Personal\NewLists\NewLists\frmNewLists.cs:줄 328
+[16:03:51] 을(를) 종료 합니다.
+[16:03:56] 을(를) 시작 합니다.
+[16:04:02] 을(를) 종료 합니다.

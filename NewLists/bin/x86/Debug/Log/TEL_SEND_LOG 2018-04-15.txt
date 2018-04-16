@@ -1,0 +1,141 @@
+[16:48:32] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[16:48:58] 미전송[Mtype]NewLists[ChatID1194481595:NewList_Test][Bithumb]BTC 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1251776432:운영진채팅방][Bithumb]BTC 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1373476627:NewList_Error][Bithumb]BTC 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1194481595:NewList_Test][Bithumb]ETH 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1251776432:운영진채팅방][Bithumb]ETH 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1373476627:NewList_Error][Bithumb]ETH 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1194481595:NewList_Test][Bithumb]DASH 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1251776432:운영진채팅방][Bithumb]DASH 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1373476627:NewList_Error][Bithumb]DASH 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1194481595:NewList_Test][Bithumb]LTC 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1251776432:운영진채팅방][Bithumb]LTC 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1373476627:NewList_Error][Bithumb]LTC 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1194481595:NewList_Test][Bithumb]ETC 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1251776432:운영진채팅방][Bithumb]ETC 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1373476627:NewList_Error][Bithumb]ETC 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1194481595:NewList_Test][Bithumb]XRP 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1251776432:운영진채팅방][Bithumb]XRP 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1373476627:NewList_Error][Bithumb]XRP 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1194481595:NewList_Test][Bithumb]BCH 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1251776432:운영진채팅방][Bithumb]BCH 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1373476627:NewList_Error][Bithumb]BCH 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1194481595:NewList_Test][Bithumb]XMR 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1251776432:운영진채팅방][Bithumb]XMR 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1373476627:NewList_Error][Bithumb]XMR 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1194481595:NewList_Test][Bithumb]QTUM 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1251776432:운영진채팅방][Bithumb]QTUM 심볼 추가 확인
+[16:48:58] 미전송[Mtype]NewLists[ChatID1373476627:NewList_Error][Bithumb]QTUM 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1194481595:NewList_Test][Bithumb]BTG 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1251776432:운영진채팅방][Bithumb]BTG 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1373476627:NewList_Error][Bithumb]BTG 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1194481595:NewList_Test][Bithumb]EOS 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1251776432:운영진채팅방][Bithumb]EOS 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1373476627:NewList_Error][Bithumb]EOS 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1194481595:NewList_Test][Bithumb]ICX 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1251776432:운영진채팅방][Bithumb]ICX 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1373476627:NewList_Error][Bithumb]ICX 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1194481595:NewList_Test][Bithumb]VEN 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1251776432:운영진채팅방][Bithumb]VEN 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1373476627:NewList_Error][Bithumb]VEN 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1194481595:NewList_Test][Bithumb]TRX 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1251776432:운영진채팅방][Bithumb]TRX 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1373476627:NewList_Error][Bithumb]TRX 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1194481595:NewList_Test][Bithumb]ELF 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1251776432:운영진채팅방][Bithumb]ELF 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1373476627:NewList_Error][Bithumb]ELF 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1194481595:NewList_Test][Bithumb]MITH 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1251776432:운영진채팅방][Bithumb]MITH 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1373476627:NewList_Error][Bithumb]MITH 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1194481595:NewList_Test][Bithumb]date 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1251776432:운영진채팅방][Bithumb]date 심볼 추가 확인
+[16:48:59] 미전송[Mtype]NewLists[ChatID1373476627:NewList_Error][Bithumb]date 심볼 추가 확인
+[17:26:20] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[18:34:17] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[18:34:38] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[18:35:00] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]요청이 중단되었습니다. 예기치 않게 연결이 닫혔습니다.
+[18:46:33] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[18:46:50] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]요청이 중단되었습니다. 예기치 않게 연결이 닫혔습니다.
+[18:51:18] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[18:53:46] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]요청이 중단되었습니다. 예기치 않게 연결이 닫혔습니다.
+[18:54:03] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]요청이 중단되었습니다. 예기치 않게 연결이 닫혔습니다.
+[19:03:35] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[19:44:42] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[19:44:50] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]dsExcute_Query(SQLite) : SQL logic error
+no such table: Notice
+[19:45:05] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]dsExcute_Query(SQLite) : SQL logic error
+no such table: Notice
+[19:45:22] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]dsExcute_Query(SQLite) : SQL logic error
+no such table: Notice
+[19:45:57] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지][완료] eosDAC 에어드랍 관련 공지 (4/15 오전 10시) 
+[완료] eosDAC 에어드랍 관련 공지 (4/15 오전 10시)
+[19:45:59] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지]엘프(Aelf), 미스릴(Mithril) 상장 및 이벤트 안내 
+엘프(Aelf), 미스릴(Mithril) 상장 및 이벤트 안내
+[19:45:59] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지]빗썸PRO 자산이동 횟수 변경 안내 
+빗썸PRO 자산이동 횟수 변경 안내
+[19:45:59] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지]모네로(XMR) 입출금 유의사항 안내 
+모네로(XMR) 입출금 유의사항 안내
+[19:45:59] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지][점검완료]모네로(XMR) 입출금 임시점검 안내 
+[점검완료]모네로(XMR) 입출금 임시점검 안내
+[19:45:59] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지]아이콘 에어드랍 이벤트 지급 안내 
+아이콘 에어드랍 이벤트 지급 안내
+[19:46:00] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지]빗썸 트론(TRON) 상장 안내 
+빗썸 트론(TRON) 상장 안내
+[19:46:00] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지]빗썸PRO 사전예약 이벤트: PRO의 디테일 3차 당첨자 안내 
+빗썸PRO 사전예약 이벤트: PRO의 디테일 3차 당첨자 안내
+[19:46:00] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지]트론(TRON) 상장 및 이벤트 안내 
+트론(TRON) 상장 및 이벤트 안내
+[19:47:39] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[19:47:48] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지][완료] eosDAC 에어드랍 관련 공지 (4/15 오전 10시) 
+https://bithumb.cafe/archives/25592
+[19:47:48] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지]엘프(Aelf), 미스릴(Mithril) 상장 및 이벤트 안내 
+https://bithumb.cafe/archives/25673
+[19:47:48] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지]빗썸PRO 자산이동 횟수 변경 안내 
+https://bithumb.cafe/archives/25359
+[19:47:48] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지]모네로(XMR) 입출금 유의사항 안내 
+https://bithumb.cafe/archives/25334
+[19:47:48] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지][점검완료]모네로(XMR) 입출금 임시점검 안내 
+https://bithumb.cafe/archives/25242
+[19:47:48] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지]아이콘 에어드랍 이벤트 지급 안내 
+https://bithumb.cafe/archives/25053
+[19:47:49] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지]빗썸 트론(TRON) 상장 안내 
+https://bithumb.cafe/archives/25042
+[19:47:49] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지]빗썸PRO 사전예약 이벤트: PRO의 디테일 3차 당첨자 안내 
+https://bithumb.cafe/archives/24858
+[19:47:49] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지]트론(TRON) 상장 및 이벤트 안내 
+https://bithumb.cafe/archives/24829
+[19:51:04] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[19:51:09] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지]빗썸 VeChain(VEN) 상장 안내 
+https://bithumb.cafe/archives/24547
+[19:51:09] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지]비체인(VeChain) 상장 및 이벤트 안내 
+https://bithumb.cafe/archives/24443
+[19:51:09] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지][정상화] 서버 점검 안내 (Maintenance Notice) 
+https://bithumb.cafe/archives/24231
+[19:51:09] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지][정상화] ETH, EOS 출금지연 안내 
+https://bithumb.cafe/archives/24108
+[19:51:09] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지]빗썸PRO 사전예약 이벤트: PRO의 디테일 2차 당첨자 안내 
+https://bithumb.cafe/archives/24086
+[19:51:09] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지][정상화] 비트코인(BTC) 출금지연 및 출금취소 안내 
+https://bithumb.cafe/archives/23822
+[19:51:09] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지]빗썸 ICON(ICX) 상장 안내 
+https://bithumb.cafe/archives/23473
+[19:51:09] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지]빗썸PRO 사전예약 이벤트: PRO의 디테일 1차 당첨자 안내 
+https://bithumb.cafe/archives/23470
+[19:51:09] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Bithumb공지]빗썸 사칭 사이트 및 SMS 주의 공지 
+https://bithumb.cafe/archives/23336
+[19:53:11] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[19:53:55] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[19:54:20] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[19:55:02] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[19:56:12] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[19:56:29] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[19:57:04] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[19:58:26] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[19:58:29] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]빗썸공지가 9건이 아닙니다. 4건
+[19:59:35] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[20:00:01] 미전송[Mtype]NewNotice[ChatID1194481595:NewList_Test][신규Bithumb공지][완료] eosDAC 에어드랍 관련 공지 (4/15 오전 10시) 
+https://bithumb.cafe/archives/25592
+[20:01:09] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[20:01:35] 미전송[Mtype]NewNotice[ChatID1194481595:NewList_Test][신규Bithumb공지][완료] eosDAC 에어드랍 관련 공지 (4/15 오전 10시) 
+https://bithumb.cafe/archives/25592
+[20:02:22] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.

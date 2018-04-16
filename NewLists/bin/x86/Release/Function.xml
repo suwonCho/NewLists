@@ -1,0 +1,3487 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Function</name>
+    </assembly>
+    <members>
+        <member name="T:Function.Db.enDBType">
+            <summary>
+            데이터 베이스 형태
+            </summary>
+        </member>
+        <member name="M:Function.Db.fnc.NullStringEmpty2DBnull(System.Object)">
+            <summary>
+            Null값 이나 string.empty값을 dbnull로 변경
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.fnc.Query_ConditionBuilder(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            텍스트를 seperator를 구분자로 쪼개어 seperatconditon로 연결 한 쿼리 조건을 리턴한다.
+            </summary>
+            <param name="text"></param>
+            <param name="field"></param>
+            <param name="seperator">문자열 구분자</param>
+            <param name="condition">검색조건</param>
+            <param name="seperatconditon">검색조건 연결자 : AND / OR</param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.fnc.Query_BuildbyDataTable(Function.Db.enDBType,System.Data.DataTable,System.String,Function.Db.fnc.enQueryType,System.Boolean)">
+            <summary>
+            데이터 테이블에서 쿼리를 만든다.
+            </summary>
+            <param name="dbType"></param>
+            <param name="dt"></param>
+            <param name="TableName"></param>
+            <param name="QueryType"></param>
+            <param name="isParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.fnc.Query_Build(Function.Db.enDBType,System.String[],System.String,Function.Db.fnc.enQueryType,System.Boolean)">
+            <summary>
+            쿼리를 생성 한다
+            </summary>
+            <param name="dbType"></param>
+            <param name="Columns"></param>
+            <param name="TableName"></param>
+            <param name="QueryType"></param>
+            <param name="isParam"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Function.Db.SQLite">
+            <summary>
+            SQLite Control Class
+            사용시 [오류]'런타임에 로드할 수 없습니다.'발생시 참조하는 프로젝트 app.config의 [태그]'startup'을 'startup useLegacyV2RuntimeActivationPolicy="true"' 로 변경
+            </summary>
+        </member>
+        <member name="F:Function.Db.SQLite.Dbconn">
+            <summary>
+            DB Connection
+            </summary>
+        </member>
+        <member name="F:Function.Db.SQLite.Dbcmd">
+            <summary>
+            DB Command
+            </summary>
+        </member>
+        <member name="P:Function.Db.SQLite.ConnectionString">
+            <summary>
+            sql 연결스트링
+            </summary>
+        </member>
+        <member name="P:Function.Db.SQLite.RetryTimes_Connecting">
+            <summary>
+            DB연결 재시도 횟수 (범위 1~5)
+            </summary>
+        </member>
+        <member name="F:Function.Db.SQLite.retryTimes_Query">
+            <summary>
+            쿼리 재시도 회수 (범위 1-5)
+            </summary>
+        </member>
+        <member name="M:Function.Db.SQLite.#ctor">
+            <summary>
+            SQLite 클래스를 생성합니다.
+            </summary>
+        </member>
+        <member name="M:Function.Db.SQLite.#ctor(System.String)">
+            <summary>
+            SQLite 클래스를 생성합니다.
+            </summary>
+            <param name="dbfile">DB File 경로</param>
+        </member>
+        <member name="M:Function.Db.SQLite.Set_ConnectionString(System.String)">
+            <summary>
+            연결스트링을 설정합니다.
+            </summary>
+            <param name="dbfile">DB File 경로</param>
+        </member>
+        <member name="M:Function.Db.SQLite.DB_Open">
+            <summary>
+            Db를 연결한다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.SQLite.DB_Close">
+            <summary>
+            db를 닫는다.
+            </summary>
+            <param name="strMsg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.SQLite.DB_isOpen">
+            <summary>
+            db가 연결 상태인가를 체크
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.SQLite.BeginTransaction">
+            <summary>
+            Transaction을 시작 한다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.SQLite.CommitTransaction">
+            <summary>
+            Tranasction을 처리(commint) 한다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.SQLite.RollBackTransaction">
+            <summary>
+            Tranasction을 처리(rollback) 한다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.SQLite.dsExcute_Query(System.String)">
+            <summary>
+            쿼리한 결과를 DataTable에 넣어 준다..
+            </summary>
+            <param name="Query"></param>		
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.SQLite.dsExcute_Query(System.String,System.Data.SQLite.SQLiteParameter[])">
+            <summary>
+            쿼리를 실행한다. @로 시작하는 파라메터 명을 사용한다.
+            </summary>
+            <param name="Query"></param>
+            <param name="Params"></param>
+            <param name="writelog"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.SQLite.intExcute_Query(System.String)">
+            <summary>
+            쿼리를 실행하고 영향 받은 행 개수를 리턴한다.
+            </summary>
+            <param name="Query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.SQLite.intExcute_Query(System.String,System.Data.SQLite.SQLiteParameter[])">
+            <summary>
+            쿼리를 실행하고 영향 받은 행 개수를 리턴한다.
+            </summary>
+            <param name="Query"></param>
+            <param name="Params"></param>		
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.SQLite.intExcute_StoredProcedure(System.String,System.Data.SQLite.SQLiteParameter[])">
+            <summary>
+            스토어 프로시져를 실행 하고 영향받은 행에 갯수를 리턴
+            </summary>
+            <param name="spName"></param>
+            <param name="Params"></param>		
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.SQLite.dsExcute_StoredProcedure(System.String,System.Data.SQLite.SQLiteParameter[])">
+            <summary>
+            스토어 프로시져를 실행 하고 결과를 DataSet으로 리턴한다.
+            </summary>
+            <param name="spName"></param>
+            <param name="Params"></param>		
+            <returns></returns>
+        </member>
+        <member name="T:Function.Db.Odac">
+            <summary>
+            Oracle  Class : Oracle 제공 dll 사용
+            사용법은 OracleDB 클래스와 동일하나 필요 설치파을을 추가 햐여 놓았음....
+            </summary>
+        </member>
+        <member name="T:Function.Db.OleDB">
+            <summary>
+            OldDB Control Class
+            </summary>
+        </member>
+        <member name="T:Function.Db.OleDB.enProvider">
+            <summary>
+            OleDb 연결 Db Type
+            </summary>
+        </member>
+        <member name="F:Function.Db.OleDB.enProvider.MSSql">
+            <summary>
+            MS Sql
+            </summary>
+        </member>
+        <member name="F:Function.Db.OleDB.enProvider.Oracle">
+            <summary>
+            오라클 DB
+            </summary>
+        </member>
+        <member name="F:Function.Db.OleDB.enProvider.MDB">
+            <summary>
+            MS Access
+            </summary>
+        </member>
+        <member name="F:Function.Db.OleDB.enProvider.Excel">
+            <summary>
+            MS Excel
+            </summary>
+        </member>
+        <member name="F:Function.Db.OleDB.enProvider.CSV">
+            <summary>
+            ,구분된 TextFile <para/>
+            ip:폴더경로, 조회할때 select * from 파일명
+            </summary>
+        </member>
+        <member name="F:Function.Db.OleDB.enProvider.Sybase">
+            <summary>
+            Sybase DataBase : Sybase IQ 15 설치 후 사용
+            </summary>
+        </member>
+        <member name="F:Function.Db.OleDB.enProvider.db2">
+            <summary>
+            DB2
+            </summary>
+        </member>
+        <member name="F:Function.Db.OleDB.enProvider.ACCDB">
+            <summary>
+            MS Access DB(NEW)
+            </summary>
+        </member>
+        <member name="F:Function.Db.OleDB.Dbconn">
+            <summary>
+            DB Connection
+            </summary>
+        </member>
+        <member name="F:Function.Db.OleDB.Dbcmd">
+            <summary>
+            DB Command
+            </summary>
+        </member>
+        <member name="P:Function.Db.OleDB.ConnectionString">
+            <summary>
+            sql 연결스트링
+            </summary>
+        </member>
+        <member name="P:Function.Db.OleDB.RetryTimes_Connecting">
+            <summary>
+            DB연결 재시도 횟수 (범위 1~5)
+            </summary>
+        </member>
+        <member name="F:Function.Db.OleDB.retryTimes_Query">
+            <summary>
+            쿼리 재시도 회수 (범위 1-5)
+            </summary>
+        </member>
+        <member name="M:Function.Db.OleDB.#ctor(Function.Db.OleDB.enProvider,System.String,System.String,System.String,System.String)">
+            <summary>
+            객체를 생성 하면서 Connection String 만든다.
+            </summary>
+            <param name="strIP"></param>
+            <param name="strDB"></param>
+            <param name="strID"></param>
+            <param name="strPassword"></param>
+        </member>
+        <member name="M:Function.Db.OleDB.#ctor(System.String)">
+            <summary>
+            컨넥션 정보를 받는다..
+            </summary>
+            <param name="strConnectionString"></param>
+        </member>
+        <member name="M:Function.Db.OleDB.Set_ConnectionString(Function.Db.OleDB.enProvider,System.String,System.String,System.String,System.String)">
+            <summary>
+            연결스트링을 설정합니다.
+            </summary>
+            <param name="enPro">DB종류</param>
+            <param name="strServer"></param>
+            <param name="strDB"></param>
+            <param name="strID"></param>
+            <param name="strPassword"></param>
+        </member>
+        <member name="M:Function.Db.OleDB.Set_connectionString(Function.Db.OleDB.enProvider,System.String,System.String,System.String,System.String)">
+            <summary>
+            연결스트링을 설정합니다.
+            </summary>
+            <param name="enPro">DB종류</param>
+            <param name="strServer"></param>
+            <param name="strDB"></param>
+            <param name="strID"></param>
+            <param name="strPassword"></param>
+        </member>
+        <member name="M:Function.Db.OleDB.DB_Open">
+            <summary>
+            Db를 연결한다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OleDB.DB_Close">
+            <summary>
+            db를 닫는다.
+            </summary>
+            <param name="strMsg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OleDB.DB_isOpen">
+            <summary>
+            db가 연결 상태인가를 체크
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OleDB.BeginTransaction">
+            <summary>
+            Transaction을 시작 한다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OleDB.CommitTransaction">
+            <summary>
+            Tranasction을 처리(commint) 한다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OleDB.RollBackTransaction">
+            <summary>
+            Tranasction을 처리(rollback) 한다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OleDB.dsExcute_Query(System.String)">
+            <summary>
+            쿼리한 결과를 DataTable에 넣어 준다..
+            </summary>
+            <param name="Query"></param>		
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OleDB.intExcute_Query(System.String)">
+            <summary>
+            쿼리를 실행하고 영향 받은 행 개수를 리턴한다.
+            </summary>
+            <param name="Query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OleDB.intExcute_Query(System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            쿼리를 실행하고 영향 받은 행 개수를 리턴한다.
+            </summary>
+            <param name="Query"></param>
+            <param name="Params"></param>		
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OleDB.intExcute_StoredProcedure(System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            스토어 프로시져를 실행 하고 영향받은 행에 갯수를 리턴
+            </summary>
+            <param name="spName"></param>
+            <param name="Params"></param>		
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OleDB.dsExcute_StoredProcedure(System.String,System.Data.OleDb.OleDbParameter[])">
+            <summary>
+            스토어 프로시져를 실행 하고 결과를 DataSet으로 리턴한다.
+            </summary>
+            <param name="spName"></param>
+            <param name="Params"></param>		
+            <returns></returns>
+        </member>
+        <member name="T:Function.Db.MsSQL">
+            <summary>
+            Ms Sql Class
+            </summary>
+        </member>
+        <member name="T:Function.Db.MsSQL.strConnect">
+            <summary>
+            ID/IP가 비어 있으면 윈도우즈 인증
+            </summary>
+        </member>
+        <member name="F:Function.Db.MsSQL.Dbconn">
+            <summary>
+            DB Connection
+            </summary>
+        </member>
+        <member name="F:Function.Db.MsSQL.Dbcmd">
+            <summary>
+            DB Command
+            </summary>
+        </member>
+        <member name="F:Function.Db.MsSQL.connectionString">
+            <summary>
+            sql 연결스트링
+            </summary>
+        </member>
+        <member name="F:Function.Db.MsSQL.isTaransaction">
+            <summary>
+            트랜잭션 여부
+            </summary>
+        </member>
+        <member name="F:Function.Db.MsSQL.retryTimes_Connecting">
+            <summary>
+            DB연결 재시도 횟수 (범위 1~5)
+            </summary>
+        </member>
+        <member name="F:Function.Db.MsSQL.retryTimes_Query">
+            <summary>
+            쿼리 재시도 회수 (범위 1-5)
+            </summary>
+        </member>
+        <member name="M:Function.Db.MsSQL.#ctor(System.String,System.String,System.String,System.String,Function.Util.Log)">
+            <summary>
+            SQL DB 연결 Class 생성
+            </summary>
+            <param name="strServer">서버 IP / 이름</param>
+            <param name="strDB">DataBase이름</param>
+            <param name="strID">ID</param>
+            <param name="strPassword">Password</param>
+        </member>
+        <member name="M:Function.Db.MsSQL.Set_ConnectionString(System.String,System.String,System.String,System.String)">
+            <summary>
+            연결스트링을 설정합니다.
+            </summary>
+            <param name="strServer">서버 IP / 이름</param>
+            <param name="strDB">DataBase이름</param>
+            <param name="strID">ID</param>
+            <param name="strPassword">Password</param>
+        </member>
+        <member name="M:Function.Db.MsSQL.DB_Open">
+            <summary>
+            Db를 연결한다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.MsSQL.DB_Close">
+            <summary>
+            db를 닫는다.
+            </summary>
+            <param name="strMsg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.MsSQL.DB_isOpen">
+            <summary>
+            db가 연결 상태인가를 체크
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.MsSQL.BeginTransaction">
+            <summary>
+            Transaction을 시작 한다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.MsSQL.CommitTransaction">
+            <summary>
+            Tranasction을 처리(commint) 한다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.MsSQL.RollBackTransaction">
+            <summary>
+            Tranasction을 처리(rollback) 한다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.MsSQL.Excute_Query(System.String,System.String,System.Boolean)">
+            <summary>
+            쿼리한 결과를 DataSet에 넣어 준다..
+            </summary>
+            <param name="Query"></param>
+            <param name="strTable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.MsSQL.Excute_StoredProcedure(System.String,System.Data.SqlClient.SqlParameter[],System.String,System.Boolean)">
+            <summary>
+            스토어 프로시져를 실행 합니다..
+            </summary>
+            <param name="spName">프로시져 이름</param>
+            <param name="Params">파라메터들</param>
+            <param name="strTable">Table 매칭 이름..</param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.MsSQL.fnc_date_get(Function.Db.MsSQL.strConnect)">
+            <summary>
+            (펑션)sql db연결 체크용 시간조회
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.MsSQL.fnc_filepath_get(Function.Db.MsSQL.strConnect)">
+            <summary>
+            (펑션)기본(master) 파일 경로를 조회 한다.
+            </summary>
+            <param name="conn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.MsSQL.fnc_DataBase_Exists(Function.Db.MsSQL.strConnect,System.String)">
+            <summary>
+            (펑션)DataBase 존재 여부를 확인한다.
+            </summary>
+            <param name="conn"></param>
+            <param name="dbName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.MsSQL.fnc_DataBase_drop(Function.Db.MsSQL.strConnect,System.String)">
+            <summary>
+             (펑션)DataBase 삭제 한다.
+            </summary>
+            <param name="conn"></param>
+            <param name="dbName"></param>
+        </member>
+        <member name="M:Function.Db.MsSQL.fnc_LinkedServers(Function.Db.MsSQL.strConnect)">
+            <summary>
+            (펑션)연결된 서버 목록을 조회 한다.
+            </summary>
+            <param name="conn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.MsSQL.fnc_LinkedServer_Test(Function.Db.MsSQL.strConnect,System.String)">
+            <summary>
+            (펑션)연결된 서버를 테스트 한다. 실패 시 exception 발생
+            </summary>
+            <param name="conn"></param>
+            <param name="linkedServerName"></param>
+        </member>
+        <member name="M:Function.Db.MsSQL.fnc_LinkedServer_Exist(Function.Db.MsSQL.strConnect,System.String)">
+            <summary>
+            (펑션)연결된 서버 이름으로 존재여부를 확인한다.
+            </summary>
+            <param name="conn"></param>
+            <param name="linkedServerName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.MsSQL.fnc_LinkedServer_Drop(Function.Db.MsSQL.strConnect,System.String)">
+            <summary>
+            (펑션)연결된 서버를 삭제 한다.
+            </summary>
+            <param name="conn"></param>
+            <param name="linkedServerName"></param>
+        </member>
+        <member name="M:Function.Db.MsSQL.fnc_Procedure_Drop(Function.Db.MsSQL.strConnect,System.String)">
+            <summary>
+            (펑션)프로시져를 삭제 한다.
+            </summary>
+            <param name="conn"></param>
+            <param name="SPName"></param>
+        </member>
+        <member name="T:Function.Db.OracleDB">
+            <summary>
+            Oracle Class : Oracle 제공 dll 사용
+            odac 사용시 프로젝트 출력에서 콘텐트파일 출력 추가 할것.
+            </summary>
+        </member>
+        <member name="M:Function.Db.OracleDB.PackageListGet(Function.Db.OracleDB.strConnect)">
+            <summary>
+            패키지 목록을 조회한다.
+            </summary>
+            <param name="conn"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Function.Db.OracleDB.Dbconn">
+            <summary>
+            DB Connection
+            </summary>
+        </member>
+        <member name="F:Function.Db.OracleDB.Dbcmd">
+            <summary>
+            DB Command
+            </summary>
+        </member>
+        <member name="P:Function.Db.OracleDB.ConnectionString">
+            <summary>
+            sql 연결스트링
+            </summary>
+        </member>
+        <member name="P:Function.Db.OracleDB.RetryTimes_Connecting">
+            <summary>
+            DB연결 재시도 횟수 (범위 1~5)
+            </summary>
+        </member>
+        <member name="F:Function.Db.OracleDB.retryTimes_Query">
+            <summary>
+            쿼리 재시도 회수 (범위 1-5)
+            </summary>
+        </member>
+        <member name="M:Function.Db.OracleDB.#ctor(System.String,System.String,System.String,Function.Util.Log)">
+            <summary>
+            객체를 생성 하면서 Connection String 만든다.
+            </summary>
+            <param name="strIP"></param>
+            <param name="strDB"></param>
+            <param name="strID"></param>
+            <param name="strPassword"></param>
+        </member>
+        <member name="M:Function.Db.OracleDB.#ctor(Function.Db.OracleDB.strConnect,Function.Util.Log)">
+            <summary>
+            객체를 생성 하면서 Connection String 만든다.
+            </summary>
+            <param name="strConn"></param>
+        </member>
+        <member name="M:Function.Db.OracleDB.#ctor(System.String,Function.Util.Log)">
+            <summary>
+            객체를 생성 하면서 connetion string을 설정 한다.
+            </summary>
+            <param name="strConnectionString"></param>
+        </member>
+        <member name="M:Function.Db.OracleDB.Get_ConnectionString(System.String,System.String,System.String)">
+            <summary>
+            연결스트링을 설정합니다.
+            </summary>
+            <param name="strTNS"></param>
+            <param name="strID"></param>
+            <param name="strPassword"></param>
+        </member>
+        <member name="M:Function.Db.OracleDB.DB_Open">
+            <summary>
+            Db를 연결한다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OracleDB.DB_Close">
+            <summary>
+            db를 닫는다.
+            </summary>
+            <param name="strMsg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OracleDB.DB_isOpen">
+            <summary>
+            db가 연결 상태인가를 체크
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OracleDB.BeginTransaction">
+            <summary>
+            Transaction을 시작 한다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OracleDB.CommitTransaction">
+            <summary>
+            Tranasction을 처리(commint) 한다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OracleDB.RollBackTransaction">
+            <summary>
+            Tranasction을 처리(rollback) 한다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OracleDB.dsExcute_Query(System.String,System.Boolean)">
+            <summary>
+            쿼리 실행한다.
+            </summary>
+            <param name="Query"></param>
+            <param name="dt"></param>
+            <param name="strMsg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OracleDB.dsExcute_Query(System.String,Oracle.DataAccess.Client.OracleParameter[],System.Boolean)">
+            <summary>
+            쿼리를 실행한다.
+            </summary>
+            <param name="Query"></param>
+            <param name="Params"></param>
+            <param name="writelog"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OracleDB.intExcute_Query(System.String,System.Boolean)">
+            <summary>
+            쿼리를 실행한다..
+            </summary>
+            <param name="Query"></param>
+            <returns>영향 받은 데이터 수</returns>
+        </member>
+        <member name="M:Function.Db.OracleDB.intExcute_Query(System.String,Oracle.DataAccess.Client.OracleParameter[],System.Boolean)">
+            <summary>
+            쿼리를 실행한다..
+            </summary>
+            <param name="Query"></param>
+            <returns>영향 받은 데이터 수</returns>
+        </member>
+        <member name="M:Function.Db.OracleDB.intExcute_StoredProcedure(System.String,Oracle.DataAccess.Client.OracleParameter[],System.Boolean)">
+            <summary>
+            스토어 프로시져를 실행 합니다..
+            </summary>
+            <param name="spName"></param>
+            <param name="Params"></param>		
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OracleDB.dsExcute_StoredProcedure(System.String,Oracle.DataAccess.Client.OracleParameter[],System.Boolean)">
+            <summary>
+            스토어 프로시져를 실행 합니다..
+            </summary>
+            <param name="spName"></param>
+            <param name="Params"></param>		
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OracleDB.Excute_StoredProcedure(System.String,Oracle.DataAccess.Client.OracleParameter[],System.Int32,System.IO.FileInfo,System.Boolean)">
+            <summary>
+            스토어 프로시져를 실행 합니다..
+            </summary>
+            <param name="spName"></param>
+            <param name="Params"></param>		
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OracleDB.Excute_StoredProcedure(System.String,Oracle.DataAccess.Client.OracleParameter[],System.Int32,System.IO.FileInfo,Function.Db.OracleDB.delExcuteProcedure_Progress,System.Boolean)">
+            <summary>
+            스토어 프로시져를 실행 합니다..
+            </summary>
+            <param name="spName"></param>
+            <param name="Params"></param>
+            <param name="intLob_ParamCnt"></param>
+            <param name="fi"></param>
+            <param name="evtP"></param>
+        </member>
+        <member name="M:Function.Db.OracleDB.excute_StoredProcedure(System.String,Oracle.DataAccess.Client.OracleParameter[],System.Int32,System.IO.FileInfo,Function.Db.OracleDB.delExcuteProcedure_Progress,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="spName"></param>
+            <param name="Params"></param>
+            <param name="intLob_ParamCnt"></param>
+            <param name="fi"></param>
+            <param name="evtP"></param>
+        </member>
+        <member name="T:Function.Db.OracleDB.Fnc">
+            <summary>
+            오라클 DB사용시 사용하는 Function Method
+            </summary>
+        </member>
+        <member name="M:Function.Db.OracleDB.Fnc.StringEmpty2DbNull(System.String)">
+            <summary>
+            string.empty값을 dbnull로 변환 하여 준다.
+            </summary>
+            <param name="param"></param>
+            <param name="str"></param>
+        </member>
+        <member name="M:Function.Db.OracleDB.Fnc.RemoveSpLetter(System.String)">
+            <summary>
+            쿼리 실행시 오류나는 문자열을 제거하여 준다.
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OracleDB.Fnc.obj2String(System.Object)">
+            <summary>
+            oracle object값을 string으로 변환하여 준다.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OracleDB.Fnc.obj2int(System.Object)">
+            <summary>
+            oracle object값을 int으로 변환하여 준다.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OracleDB.Fnc.obj2Long(System.Object)">
+            <summary>
+            oracle object값을 long으로 변환하여 준다.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OracleDB.Fnc.obj2Float(System.Object)">
+            <summary>
+            oracle object값을 float으로 변환하여 준다.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OracleDB.Fnc.Table_Check_Exists(Function.Db.OracleDB.strConnect,System.String)">
+            <summary>
+            오라클에 테이블이 있는지 검사를 하여 준다.
+            </summary>
+            <param name="strConn"></param>
+            <param name="strTableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Db.OracleDB.Fnc.PACKAGE_Check_Exists(Function.Db.OracleDB.strConnect,System.String)">
+            <summary>
+            오라클에 Package가 있는지 검사를 하여 준다.
+            </summary>
+            <param name="strConn"></param>
+            <param name="strTableName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Function.DFnc">
+            <summary>
+            Dynamic 요소 처리 관련 클래스
+            </summary>
+        </member>
+        <member name="M:Function.DFnc.Property_Set_Value(System.Object,System.String,System.Object)">
+            <summary>
+            객체 프로 퍼티에 값을 설정한다.
+            </summary>
+            <param name="o"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Function.DFnc.Property_Set_Value(System.Object,System.String,System.Type[],System.Object[],System.Object)">
+            <summary>
+            객체 프로 퍼티에 값을 설정한다.
+            </summary>
+            <param name="o"></param>
+            <param name="name"></param>
+            <param name="paramTypes"></param>
+            <param name="paramValues"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Function.DFnc.Property_Get_Value(System.Object,System.String)">
+            <summary>
+            객체 프로 퍼티에 값을 가져온다.
+            </summary>
+            <param name="o"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.DFnc.Property_Get_Value(System.Object,System.String,System.Type[],System.Object[])">
+            <summary>
+            객체 프로 퍼티에 값을 가져온다.
+            </summary>
+            <param name="o"></param>
+            <param name="name"></param>
+            <param name="paramTypes"></param>
+            <param name="paramValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.DFnc.Property_Get_Value``1(System.Object,System.String)">
+            <summary>
+            객체 프로 퍼티에 값을 가져온다. (정해진 return type)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="o"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.DFnc.Method_Excute(System.Object,System.String,System.Object[])">
+            <summary>
+            객체 메소트를 실행하고 실행결과를 가져 온다.
+            </summary>
+            <param name="o"></param>
+            <param name="name"></param>
+            <param name="param">실행 파라메터</param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.DFnc.Method_Excute``1(System.Object,System.String,System.Object[])">
+            <summary>
+            객체 메소트를 실행하고 실행결과를 가져 온다. (정해진 return type)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="o"></param>
+            <param name="name"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Function.enModifyType">
+            <summary>
+            공용 enum : 수정 타입
+            </summary>
+        </member>
+        <member name="T:Function.enDBCommand">
+            <summary>
+            공용 enum : DB 수정 타입
+            </summary>
+        </member>
+        <member name="T:Function.enWorkingStatus">
+            <summary>
+            공용 enum 
+            </summary>
+        </member>
+        <member name="T:Function.enStringLocation">
+            <summary>
+            문자 위치
+            </summary>
+        </member>
+        <member name="T:Function.enStatus">
+            <summary>
+            상태 enum
+            </summary>
+        </member>
+        <member name="T:Function.file_backup">
+            <summary>
+            파일을 주기적으로 백업 하는 관리 클래스
+            </summary>
+        </member>
+        <member name="F:Function.file_backup._tmr">
+            <summary>
+            1시간 마다 백업 확인
+            </summary>
+        </member>
+        <member name="F:Function.file_backup._backupFolder">
+            <summary>
+            백업 폴더
+            </summary>
+        </member>
+        <member name="F:Function.file_backup._isDoBackup">
+            <summary>
+            백업 작업 진행 여부
+            </summary>
+        </member>
+        <member name="F:Function.file_backup._dtLastDelWork">
+            <summary>
+            마지막 삭제 작업 일시
+            </summary>
+        </member>
+        <member name="M:Function.file_backup.#ctor(System.Windows.Forms.Form,System.String,Function.Util.Log)">
+            <summary>
+            클래스 초기화(폼 로드하기 전에 하는게 좋다.)
+            </summary>
+            <param name="frm"></param>
+        </member>
+        <member name="M:Function.file_backup.FilesAdd(System.String)">
+            <summary>
+            파일을 추가 합니다.
+            </summary>
+            <param name="file"></param>
+        </member>
+        <member name="M:Function.file_backup.DoBackup(System.Object)">
+            <summary>
+            백업을 수행한다.
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Function.file_backup.DelProc">
+            <summary>
+            백업파일을 삭제 한다. 30일 이내는 삭제 하지 않고, 30일이 지난경우 말일자만 남겨 놓는다. 1년 지나면 전부 삭제.
+            </summary>
+        </member>
+        <member name="T:Function.Fnc.enDateType">
+            <summary>
+            날짜 형식
+            </summary>
+        </member>
+        <member name="F:Function.Fnc.enDateType.DateTime">
+            <summary>
+            yyyy-MM-dd HH:mm:ss
+            </summary>
+        </member>
+        <member name="F:Function.Fnc.enDateType.DateTimeShort">
+            <summary>
+            MM-dd HH:mm:ss
+            </summary>
+        </member>
+        <member name="F:Function.Fnc.enDateType.Date">
+            <summary>
+            yyyy-MM-dd
+            </summary>
+        </member>
+        <member name="F:Function.Fnc.enDateType.Time">
+            <summary>
+            HH:mm:ss
+            </summary>
+        </member>
+        <member name="F:Function.Fnc.enDateType.Year">
+            <summary>
+            yyyy
+            </summary>
+        </member>
+        <member name="F:Function.Fnc.enDateType.Month">
+            <summary>
+            MM
+            </summary>
+        </member>
+        <member name="F:Function.Fnc.enDateType.Day">
+            <summary>
+            dd
+            </summary>
+        </member>
+        <member name="F:Function.Fnc.enDateType.Hour">
+            <summary>
+            HH
+            </summary>
+        </member>
+        <member name="F:Function.Fnc.enDateType.Minute">
+            <summary>
+            mm
+            </summary>
+        </member>
+        <member name="F:Function.Fnc.enDateType.Second">
+            <summary>
+            ss
+            </summary>
+        </member>
+        <member name="F:Function.Fnc.enDateType.DBType">
+            <summary>
+            yyyyMMdd
+            </summary>
+        </member>
+        <member name="F:Function.Fnc.enDateType.DBTypeLong">
+            <summary>
+            yyyyMMddHHmmss
+            </summary>
+        </member>
+        <member name="F:Function.Fnc.enDateType.HourMinutes">
+            <summary>
+            HHmm
+            </summary>
+        </member>
+        <member name="M:Function.Fnc.Right(System.String,System.Int32)">
+            <summary>
+            right함수 구현
+            </summary>
+            <param name="str"></param>
+            <param name="intLen"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.Date2String(System.DateTime,Function.Fnc.enDateType)">
+            <summary>
+            시간을 문자열로 변경 하여 준다.
+            </summary>
+            <param name="dt"></param>
+            <param name="enDType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.obj2Date(System.Object,Function.Fnc.enDateType)">
+            <summary>
+            object를 날짜로 변환 : 기준이 없는 형식 부분은 현재 시간 기준으로 변환
+            </summary>
+            <param name="o"></param>
+            <param name="enDType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.String2Date(System.String,Function.Fnc.enDateType)">
+            <summary>
+            string를 날짜로 변환 : 기준이 없는 형식 부분은 현재 시간 기준으로 변환
+            </summary>
+            <param name="strDate"></param>
+            <param name="enDType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.StringIsDate(System.String,Function.Fnc.enDateType)">
+            <summary>
+            문자열이 Date형식인지 여부를 검사한다.
+            </summary>
+            <param name="strDate"></param>
+            <param name="enDType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Function.Fnc.enDayNameType">
+            <summary>
+            요일명 타입
+            </summary>
+        </member>
+        <member name="M:Function.Fnc.DayName_Get(Function.Fnc.enDayNameType,System.DateTime)">
+            <summary>
+            요일명을 구한다..
+            </summary>
+            <param name="DayNameType"></param>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.MonthName_Get(Function.Fnc.enDayNameType,System.DateTime)">
+            <summary>
+            달명을 구한다.  
+            </summary>
+            <param name="DayNameType"></param>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.obj2String(System.Object)">
+            <summary>
+            object값을 string으로 변환하여 준다.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.Bytes2String(System.Byte[])">
+            <summary>
+            byte 배열을 string으로 변환하여 반환한다.
+            </summary>
+            <param name="byt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.obj2int(System.Object)">
+            <summary>
+            object값을 int으로 변환하여 준다.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.ByteArray2HexString(System.Byte[],System.String)">
+            <summary>
+            Byte 배열을 Hex 스트링으로 변환(Hex 스트링 사이에 구분문자 입력 처리 추가) 
+            </summary>
+            <param name="bytePacket"></param>
+            <param name="cDelimiter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.obj2Long(System.Object)">
+            <summary>
+             object값을 long으로 변환하여 준다.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.obj2Double(System.Object)">
+            <summary>
+             object값을 Double으로 변환하여 준다.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.obj2Float(System.Object)">
+            <summary>
+             object값을 float으로 변환하여 준다.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.obj2Bool(System.Object)">
+            <summary>
+            object값을 boolean으로 변환하여 준다.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.String2Color(System.String)">
+            <summary>
+            hex string으로 Color를 만든다.
+            </summary>
+            <param name="strColorHex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.String2Color(System.String,System.Drawing.Color)">
+            <summary>
+            hex string으로 Color를 만든다.
+            </summary>
+            <param name="strColorHex"></param>
+            <param name="DefaultColor">에러 발생시 리턴 컬러</param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.inStr(System.String,System.String)">
+            <summary>
+            문자열에 포함되어 있는 검색 문자 수를 리턴한다.
+            </summary>
+            <param name="strData">문자열</param>
+            <param name="strFind">검색할 문자</param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.StringAdd(System.String,System.String,System.String,System.String)">
+            <summary>
+            문자열에 문자열을 더한다.
+            </summary>
+            <param name="strData">더할 대상 문자</param>
+            <param name="strAddData">더할 문자</param>
+            <param name="strSpreator">전면구분자</param>
+            <param name="strSpreatorBack">후면구분다</param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.StringArray2String(System.String[],System.String,System.Int32,System.Int32)">
+            <summary>
+            문자배열을 문자로 반환한다.
+            </summary>
+            <param name="strData">문자배열</param>
+            <param name="strSpreator">문자열구분자</param>
+            <param name="StartIndex">시작 Index</param>
+            <param name="Length">길이 -1로 설정시 최대 길이</param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.DateTimeMergeTimeSpan(System.DateTime,System.TimeSpan)">
+            <summary>
+            DateTime의 날짜 부분과 timespan의 시간 부분을 합친다.
+            c1 input control의 datepicker와 timepicker 합칠 사용하면 유용.
+            </summary>
+            <param name="dt"></param>
+            <param name="ts"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.GetResource2Stream(System.Reflection.Assembly,System.String)">
+            <summary>
+            리소스에서 Stream을 추출한다.
+            </summary>
+            <param name="thisExe">'System.Reflection.Assembly.GetExecutingAssembly()' 내용 그대로 넘길것..</param>
+            <param name="strResourceName">네임스페이스를 포함한 이름 ex)네임스페이스.이름</param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.GetResource2string(System.Reflection.Assembly,System.String)">
+            <summary>
+            리소스에서 스트링 추출 한다
+            </summary>
+            <param name="thisExe">'System.Reflection.Assembly.GetExecutingAssembly()' 내용 그대로 넘길것..</param>
+            <param name="strResourceName">네임스페이스를 포함한 이름 ex)네임스페이스.이름</param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.BytesMerge(System.Byte[],System.Byte[])">
+            <summary>
+            2개에 바이트 배열을 합쳐준다.
+            </summary>
+            <param name="byt01"></param>
+            <param name="byt02"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.BytesSetEtx(System.Byte[])">
+            <summary>
+            신호에 Etx 추가 - 길이, 체크섬, etx
+            </summary>
+            <param name="byt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.bytesEqual(System.Byte[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            2개의 바이트 배열의 일부구간을 서로 비교하여 같은지 확인 한다.
+            </summary>
+            <param name="Source_Bytes"></param>
+            <param name="Source_Bytes_ST_Idx"></param>
+            <param name="Target_Bytes"></param>
+            <param name="Target_Bytes_ST_Idx"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.GetCheckSum(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            체크섬을 생성한다.
+            </summary>
+            <param name="byt"></param>
+            <param name="intFromIndex">시작 인덱스</param>
+            <param name="intLength">길이</param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.Bytes2String(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            byte배열을 string으로 반환 한다. 시작index =0, 길이 =0 으로 설정시 전체를 변환
+            </summary>
+            <param name="byt"></param>
+            <param name="intFromIndex"></param>
+            <param name="intLength"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.Bytes2Int(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            byte배열을 int로 반환 한다. 시작index =0, 길이 =0 으로 설정시 전체를 변환
+            </summary>
+            <param name="byt"></param>
+            <param name="intFromIndex"></param>
+            <param name="intLength"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.String2Byte(System.String[],System.Boolean)">
+            <summary>
+            string 배열을 byt배열로 만들어 준다.
+            </summary>
+            <param name="str"></param>
+            <param name="isWithLength">byt앞에 길이 바이트 추가 여부.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.PlayWaveSound(System.String)">
+            <summary>
+            wav 파일을 재생한다.
+            </summary>
+            <param name="strFilePath"></param>
+        </member>
+        <member name="M:Function.Fnc.isNumeric(System.String)">
+            <summary>
+            문자열이 숫자 인지 검사 한다
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.isNumeric(System.Object)">
+            <summary>
+            object가 숫자 인지 검사 한다
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.DataTables_isEquals(System.Data.DataTable,System.Data.DataTable)">
+            <summary>
+            데이타 테이블 2개를 비교 하여 데이터가 다른지 여부 확인한다
+            </summary>
+            <param name="dt1"></param>
+            <param name="dt2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.DataTable_ColumnsAdd(System.Data.DataTable,System.String[],System.Type[],System.Object[])">
+            <summary>
+            데이터테이블 컬럼을 추가 한다 - 같은 이름이 있을경우 추가하지 않는다
+            </summary>
+            <param name="dt"></param>
+            <param name="cols"></param>
+            <param name="types"></param>
+            <returns>추가여부를 반환한다</returns>
+        </member>
+        <member name="M:Function.Fnc.DataTable_ColumnsAdd(System.Data.DataTable,System.String[],System.String[],System.Object[])">
+            <summary>
+            데이터테이블 컬럼을 추가 한다 - 같은 이름이 있을경우 추가하지 않는다
+            </summary>
+            <param name="dt"></param>
+            <param name="cols"></param>
+            <param name="types"></param>
+            <returns>추가여부를 반환한다</returns>
+        </member>
+        <member name="M:Function.Fnc.EnumItems2Strings(System.Enum)">
+            <summary>
+            enum을 string 배열로 변환하여 반화 한다.
+            </summary>
+            <param name="em">열거형을 new로 생성 하여 입력</param>
+            <returns>열거형 값을 string 배열</returns>
+        </member>
+        <member name="M:Function.Fnc.enumItem2Object(System.Enum,System.String)">
+            <summary>
+            string 값을 enum item으로 변경한다.
+            </summary>
+            <param name="em">열거형을 new로 생성 하여 입력</param>
+            <param name="strItem">item의 string 값</param>
+            <returns>object 열거형으로 형변환 하여 사용</returns>
+        </member>
+        <member name="M:Function.Fnc.dblToRoundUp(System.Double,System.Int32)">
+            <summary>
+            숫자를 올림 처리 한다.
+            </summary>
+            <param name="dValue"></param>
+            <param name="intDigit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.dblToInt(System.Double)">
+            <summary>
+            Double을 int로 변경 하여 준다.
+            </summary>
+            <param name="dValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.floatToInt(System.Single)">
+            <summary>
+            float을 int로 변경 하여 준다.
+            </summary>
+            <param name="fValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.AColor2String(System.Drawing.Color)">
+            <summary>
+            alpha값이 있는 color를 string값으로 변환 : 형태 - a,r,g,b
+            </summary>
+            <param name="col"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.String2AColor(System.String)">
+            <summary>
+            string 값을 Alpha Color값으로 변환
+            </summary>
+            <param name="str">형태 - a,r,g,b</param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.Font2String(System.Drawing.Font)">
+            <summary>
+            Font를 string 값으로 변환 : 형태 - fontname, size, style
+            </summary>
+            <param name="fnt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.String2Font(System.String)">
+            <summary>
+            string값을 Font로 변환
+            </summary>
+            <param name="str">형태 - fontname, size, style</param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.SetBit(System.Int32,System.Int32,Function.Fnc.BitSetType)">
+            <summary>
+            비트 값을 설정 합니다.
+            </summary>
+            <param name="value"></param>
+            <param name="bit"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.GetBitOn(System.Int32,System.Int32)">
+            <summary>
+            비트 On 여부를 가져 온다.
+            </summary>
+            <param name="value"></param>
+            <param name="bit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.DataTable_SchemaByObject(System.String,System.Object)">
+            <summary>
+            Object의 프로퍼티로 데이터테이블 스키마를 만들어 준다.
+            </summary>
+            <param name="DataTableName"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.DataTable_InsDataFromObject(System.Data.DataTable,System.Object)">
+            <summary>
+            object IEnumerable 데이터를 DataTable에 넣는다
+            </summary>
+            <param name="dt"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Function.Fnc.DataRow_InsDataFromObject(System.Data.DataRow,System.Object)">
+            <summary>
+            object 내용을 DataRow에 입력 하여 준다.
+            </summary>
+            <param name="dr"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Function.Fnc.StringGet(System.String@,System.Int32,System.Int32,Function.enStringLocation)">
+            <summary>
+            문자열에서 앞/뒤 에서 원하는 위치에서 문자열을 반환하고 해당 문자열은 원본에서 삭제 한다.
+            </summary>
+            <param name="txt">원본 문자열</param>
+            <param name="length">길이</param>
+            <param name="startIdx">위치</param>
+            <param name="loc">앞/뒤</param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.StringRepeat(System.String,System.Int32)">
+            <summary>
+            문자열을 원하는 숫자 만큼 반복하여 연결 후 리턴한다.
+            </summary>
+            <param name="txt"></param>
+            <param name="cnt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.TextSearchCnt(System.String,System.String,System.Int32,System.StringComparison)">
+            <summary>
+            텍스트 내에 검색어의 갯수를 찾아 내어 준다.
+            </summary>
+            <param name="txt">텍스트</param>
+            <param name="searchText">검색어</param>
+            <param name="stIdx">찾기 시작할 index</param>
+            <param name="compareCase">비교 조건</param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.TextSearch(System.String,System.String,System.Int32,System.Boolean,System.Boolean,System.StringComparison)">
+            <summary>
+            
+            </summary>
+            <param name="txt">텍스트</param>
+            <param name="searchText">검색어</param>
+            <param name="stIdx">찾기 시작할 index</param>
+            <param name="Last2Start">끝까지 검색후 처음부터 검색 여부</param>
+            <param name="isForward">방향 true:앞 false:뒤</param>
+            <param name="compareCase">비교 조건</param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Fnc.ArrayGetIndexValue(System.Object,System.Object[],System.Object[],System.Object)">
+            <summary>
+            value와 comp값을 비교하여 그순서에 맛는 values의 값을 리턴한다.
+            </summary>
+            <param name="value"></param>
+            <param name="comp"></param>
+            <param name="values"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Imaging.DrawText(System.Drawing.Graphics,System.String,System.Drawing.Color,System.Drawing.Font,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            그래픽에 텍스트를 표시한다.
+            </summary>
+            <param name="e"></param>
+            <param name="text"></param>
+            <param name="color"></param>
+            <param name="font"></param>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="iw">표시구역 너비</param>
+            <param name="ih">표시구역 높이</param>
+        </member>
+        <member name="M:Function.Imaging.DrawText(System.Drawing.Graphics,System.String,System.Drawing.Color,System.Drawing.Font,System.Int32,System.Int32,System.Int32,System.Int32,System.Drawing.StringAlignment,System.Drawing.StringAlignment)">
+            <summary>
+            그래픽에 텍스트를 표시한다.
+            </summary>
+            <param name="e"></param>
+            <param name="text"></param>
+            <param name="color"></param>
+            <param name="font"></param>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="iw">표시구역 너비</param>
+            <param name="ih">표시구역 높이</param>
+            <param name="Alignment">가로정렬</param>
+            <param name="LineAlignment">세로정렬</param>
+        </member>
+        <member name="M:Function.Imaging.DrawImage(System.Drawing.Graphics,System.String,System.Single,System.Single,System.Single,System.Single,Function.Imaging.ImageSize)">
+            <summary>
+            이미지를 그려넣는다..
+            </summary>
+            <param name="g"></param>
+            <param name="PicPath"></param>
+        </member>
+        <member name="M:Function.Imaging.Bitmap2Icon(System.Drawing.Bitmap)">
+            <summary>
+            BitMap을 Icon으로 변경한다.
+            </summary>
+            <param name="b"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.json.jsonParse.stringParse(System.Windows.Forms.TreeNode,System.String,System.Int32)">
+            <summary>
+            json 형식을 트리 뷰로 만들어 준다. name, text(value)
+            </summary>
+            <param name="tree"></param>
+            <param name="json"></param>
+            <param name="lv"></param>
+        </member>
+        <member name="T:Function.resIcon16">
+            <summary>
+              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.ResourceManager">
+            <summary>
+              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.Culture">
+            <summary>
+              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대한 현재 스레드의 CurrentUICulture
+              속성을 재정의합니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16._lock">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16._public">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.access">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.access_alt">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.add">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.add_window">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.alert">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.back">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.back_alt">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.back_up">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.button_blue">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.button_blue_alt">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.button_green">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.button_green_alt">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.button_red">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.button_red_alt">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.button_withe">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.button_yellow">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.cal">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.CD">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.CD_burn">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.CD_Music">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.clock">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.coffe">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.cpu">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.cut">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.db">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.db_add">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.db_download">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.db_remove">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.db_upload">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.db_web">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.delete">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.delete_alt">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.DJ_off">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.DJ_on">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.dollar">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.door">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.down">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.down_alt">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.download">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.edit">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.edit_user">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.emoticon_1">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.emoticon_10">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.emoticon_11">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.emoticon_12">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.emoticon_2">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.emoticon_3">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.emoticon_4">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.emoticon_5">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.emoticon_6">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.emoticon_7">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.emoticon_8">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.emoticon_9">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.error">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.euro">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.Excel">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.exclamation">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.faq">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.favorites">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.favorites_add">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.fax">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.file">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.file_copy">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.file_doc">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.file_down">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.file_edit">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.file_up">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.find">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.first">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.folder_blue">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.folder_blue_down">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.folder_blue_image">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.folder_blue_rename">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.folder_blue_up">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.folder_image">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.folder_white">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.folder_white_down">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.folder_white_rename">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.folder_white_up">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.forward">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.forward_alt">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.HD">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.HD_down">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.HD_share">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.HD_up">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.help">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.home">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.info">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.ipod_off">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.ipod_on">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.key">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.last">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.Layer_4">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.ligth_off">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.ligth_on">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.loading_001">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.loading_002">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.loading_003">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.loading_004">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.mail">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.mail_edit">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.misc">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.misc_blue">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.misc_green">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.misc_red">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.misc_yellow">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.module">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.monitor_off">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.monitor_on">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.music">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.offert">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.ok">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.package">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.package_add">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.package_down">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.Package_remove">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.package_up">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.paste">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.phone_blue">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.phone_green">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.phone_red">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.phone_yellow">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.picture">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.play">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.play_back">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.play_first">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.play_pause">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.play_rec">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.play_repeat">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.play_star">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.play_stop">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.preferences">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.print">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.print_preview">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.redo">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.reload">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.reload_alt">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.remove">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.remove_window">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.save">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.save_alt">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.save_copy">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.saveas_alt">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.search">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.search_file">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.search_web">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.server">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.sound">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.star">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.statistic">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.status_off">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.status_on">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.stop">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.stop_alt">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.tools">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.trash_empty">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.trash_full">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.undo">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.unlock">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.up">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.upload">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.user">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.users">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.vcard">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.web">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.web_ftp">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.window">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.wireless_blue">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.wireless_green">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.wireless_red">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.wireless_yellow">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.zoom_">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resIcon16.zoom_1">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="T:Function.resOffice_Icon">
+            <summary>
+              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.ResourceManager">
+            <summary>
+              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.Culture">
+            <summary>
+              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대한 현재 스레드의 CurrentUICulture
+              속성을 재정의합니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.ACTIVITL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.ACTIVITS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.APPTL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.APPTS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.CNFNOT">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.CONFLICT">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.CONTACTL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.CONTACTS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.DISTLSTL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.DISTLSTS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.DOCL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.DOCS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.EXITEML">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.EXITEMS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.INFOML">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.INFOMS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.IPML">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.IPMS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.MMSL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.MMSS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.NOTEL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.NOTES">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.OOFL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.OOFS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.POSTITL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.POSTITS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.POSTL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.POSTS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.RECL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.RECS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.REMOTEL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.REMOTES">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.REPORTL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.REPORTS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.RESENDL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.RESENDS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.RSSITEML">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.RSSITEMS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.SCDCNCLL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.SCDCNCLS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.SCDREQL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.SCDREQS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.SCDRESNL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.SCDRESNS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.SCDRESPL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.SCDRESPS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.SCDRESTL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.SCDRESTS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.SECRECL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.SECRECS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.SECURL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.SECURS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.SIGNL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.SIGNS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.SMSL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.SMSS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.TASKACCL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.TASKACCS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.TASKDECL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.TASKDECS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.TASKL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.TASKREQL">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.TASKREQS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Function.resOffice_Icon.TASKS">
+            <summary>
+              (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="T:Function.enSettingValueType">
+            <summary>
+            설정관리의 항목타입 enum
+            </summary>
+        </member>
+        <member name="T:Function.Setting">
+            <summary>
+            설정관리 클래스(DataSet으로 처리)
+            </summary>
+        </member>
+        <member name="F:Function.Setting.IsChanged">
+            <summary>
+            파일이 생성여부
+            </summary>
+        </member>
+        <member name="P:Function.Setting.GroupNames">
+            <summary>
+            그룹이름을 가져온다
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Setting.#ctor(System.String,System.Boolean)">
+            <summary>
+            파일을 로드하면서 클래스를 생성한다.
+            파일이 없을경우 생성한다.
+            </summary>
+            <param name="filepath">파일경로</param>
+            <param name="isCreate">파일이 없을경우 생성한다.</param>
+        </member>
+        <member name="M:Function.Setting.Group_Create(System.String)">
+            <summary>
+            설정 그룸을 추가 합니다.
+            (데이터 테이블 추가)
+            </summary>
+            <param name="groupName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Setting.Group_Select(System.String,System.Boolean)">
+            <summary>
+            그룹을 이름으로 찾고 현재 그룹으로 선택 합니다.
+            </summary>
+            <param name="groupName"></param>
+            <param name="isCreate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Setting.Group_Column_Add(System.String,System.Type)">
+            <summary>
+            그룹 설정에 필드를 추가합니다.
+            </summary>
+            <param name="columnName"></param>
+            <param name="type"></param>
+        </member>
+        <member name="M:Function.Setting.Group_Column_Add(System.String,System.String,System.Type)">
+            <summary>
+            그룹 설정에 필드를 추가합니다.
+            </summary>
+            <param name="groupName"></param>
+            <param name="columnName"></param>
+            <param name="type"></param>
+        </member>
+        <member name="M:Function.Setting.value_get(System.Data.DataTable,System.String,Function.enSettingValueType,System.String)">
+            <summary>
+            설정값을 가져온다.
+            </summary>
+            <param name="dt"></param>
+            <param name="name"></param>
+            <param name="defalutValue">기본값 - 설정값일 없을 경우 이 값으로 설정을 추가한다. null 일경우 추가 하지 않고 null 리턴</param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Setting.Group_GetValues">
+            <summary>
+            현재 그룹의 값 DDataRowCollection을 가지고 온다	<para/>
+            필드 : name, value, info1, info2, info3
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Setting.Value_Get(System.String,System.String,Function.enSettingValueType,System.String)">
+            <summary>
+            설정값을 가져온다.
+            </summary>
+            <param name="groupName">그룹이름</param>
+            <param name="name">설정이름</param>
+            <param name="valueType">설정타입</param>
+            <param name="defalutValue">기본값 - 설정값일 없을 경우 이 값으로 설정을 추가한다. null 일경우 추가 하지 않고 null 리턴</param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Setting.Value_Get(System.String,System.String,System.String)">
+            <summary>
+            설정값을 가져온다.
+            </summary>
+            <param name="groupName">그룹이름</param>
+            <param name="name">설정이름</param>
+            <param name="defalutValue">기본값 - 설정값일 없을 경우 이 값으로 설정을 추가한다. null 일경우 추가 하지 않고 null 리턴</param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Setting.Value_Get(System.String,System.String)">
+            <summary>
+            현재 그룹의 설정값을 가져온다.
+            </summary>
+            <param name="name">설정이름</param>
+            <param name="defalutValue">기본값 - 설정값일 없을 경우 이 값으로 설정을 추가한다. null 일경우 추가 하지 않고 null 리턴</param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Setting.value_set(System.Data.DataTable,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            설정값을 저장하거나 추가 합니다.
+            </summary>
+            <param name="dt"></param>
+            <param name="name"></param>
+            <param name="Value"></param>
+        </member>
+        <member name="M:Function.Setting.Value_Set(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            설정값을 저장하거나 추가 합니다.
+            </summary>
+            <param name="groupName">그룹이름</param>
+            <param name="name">설정이름</param>
+            <param name="Value">기본값 - 설정값일 없을 경우 이 값으로 설정을 추가한다. null 일경우 추가 하지 않고 null 리턴</param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Setting.Value_Set(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            설정값을 저장하거나 추가 합니다.
+            </summary>
+            <param name="name">설정이름</param>
+            <param name="defalutValue">기본값 - 설정값일 없을 경우 이 값으로 설정을 추가한다. null 일경우 추가 하지 않고 null 리턴</param>
+            <returns></returns>
+        </member>
+        <member name="T:Function.system">
+            <summary>
+            System Function 관련 클래스
+            </summary>
+        </member>
+        <member name="T:Function.system.clsFile">
+            <summary>
+            파일제어관련 클래스..
+            </summary>
+        </member>
+        <member name="M:Function.system.clsFile.FileExists(System.String)">
+            <summary>
+            파일 존재 여부를 확인한다..
+            </summary>
+            <param name="strFilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.system.clsFile.FileSplitPath_Name(System.String)">
+            <summary>
+            전체 경로에서 파일경로와 이름을 분리하여 준다.
+            </summary>
+            <param name="strFilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.system.clsFile.FileSplit_NameExtention(System.String)">
+            <summary>
+            파일이름(경로 제외)에서 파일명과 확장자를 분리하여 준다.
+            </summary>
+            <param name="strFileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.system.clsFile.FileGetVersion(System.String)">
+            <summary>
+            파일의 버젼 정보를 조회 한다.
+            </summary>
+            <param name="strFilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.system.clsFile.FileDelete(System.String)">
+            <summary>
+            파일을 삭제한다...
+            </summary>
+            <param name="strFilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.system.clsFile.FileCopy(System.String,System.String)">
+            <summary>
+            파일을 복사한다...
+            </summary>
+            <param name="strFilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.system.clsFile.FileMove(System.String,System.String)">
+            <summary>
+            파일을 이동한다...
+            </summary>
+            <param name="strFilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.system.clsFile.FileName_Check(System.String)">
+            <summary>
+            파일 이름을 확인한다. 같은이름이 있으면 이름뒤에 (1),(2)....
+            를 붙여 준다
+            </summary>
+            <param name="fullfilename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.system.clsFile.FileSelect(System.String,System.String,System.Boolean,System.Windows.Forms.IWin32Window)">
+            <summary>
+            파일 다이얼로그를 열어 파일을 선택한다.
+            </summary>
+            <param name="strInitialFilePath">폴더명+파일명</param>
+            <param name="strFilter"></param>
+            <param name="isMultiselect"></param>
+            <param name="iWin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.system.clsFile.FolderName_Check(System.String)">
+            <summary>
+            폴더 이름을 확인한다. 같은이름이 있으면 이름뒤에 (1),(2)....
+            를 붙여 준다
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.system.clsFile.FolderExists(System.String)">
+            <summary>
+            폴더 존재 유무를 검사한다.
+            </summary>
+            <param name="strPath"></param>
+        </member>
+        <member name="M:Function.system.clsFile.FolderCreate(System.String)">
+            <summary>
+            폴더를 생성 한다.
+            </summary>
+            <param name="strPath"></param>
+        </member>
+        <member name="M:Function.system.clsFile.FolderFileDelete(System.String)">
+            <summary>
+            폴더에 있는 파일들을 삭제한다.
+            </summary>
+            <param name="strPath"></param>
+        </member>
+        <member name="M:Function.system.clsFile.FolderDelete(System.String)">
+            <summary>
+            폴더를 삭제한다.
+            </summary>
+            <param name="strPath"></param>
+        </member>
+        <member name="M:Function.system.clsFile.FolderFileMove(System.String,System.String)">
+            <summary>
+            폴더에 있는 파일을 이동시킨다.
+            </summary>
+            <param name="strSourcePath"></param>
+            <param name="strTargetPath"></param>
+        </member>
+        <member name="M:Function.system.clsFile.Get_Crc32(System.IO.FileInfo)">
+            <summary>
+            파일에 대한 Crc32 값을 얻는다.
+            </summary>
+            <param name="fi"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.system.SystemTime_Change(System.DateTime)">
+            <summary>
+            시스템 시간을 변경한다.
+            </summary>
+            <param name="dt"></param>
+        </member>
+        <member name="T:Function.Util.Log">
+            <summary>
+            Log를 쌓는 클래스..
+            </summary>
+        </member>
+        <member name="M:Function.Util.Log.#ctor(System.String,System.String,System.Int32,System.Boolean)">
+            <summary>
+            Log 클래스를 생성한다.
+            </summary>
+            <param name="_Directory">로그 디렉토리 경로</param>
+            <param name="FileName">파일명</param>
+            <param name="_DelDays">로그 보관일자</param>
+            <param name="_OnOff">로그 기록여부</param>
+        </member>
+        <member name="M:Function.Util.Log.WLog(System.String,System.Object[])">
+            <summary>
+            로그를 기록한다.. 파일명을 지정 안하면 "Log 년-월-일" 파일로 기록
+            </summary>
+            <param name="format"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Util.Log.WLog(System.String)">
+            <summary>
+            로그를 기록한다.. 파일명을 지정 안하면 "Log 년-월-일" 파일로 기록
+            </summary>
+            <param name="StrMsg">기록할 string</param>
+            <returns>성공여부</returns>
+        </member>
+        <member name="M:Function.Util.Log.WLog(System.String,System.String)">
+            <summary>
+            로그를 기록한다.. 파일명을 지정 안하면 "Log 년-월-일" 파일로 기록
+            </summary>
+            <param name="strMsg">기록할 string</param>
+            <param name="FileName">파일명(폴더명을 쓰지 말것)</param>
+            <returns>성공여부</returns>
+        </member>
+        <member name="M:Function.Util.Log.LogFileClear">
+            <summary>
+            로그 폴더에 일정 기간 지난 로그들을 지워 준다...
+            단.."{fileName} 년-월-일" 파일로 기록 형태만..
+            </summary>
+            <param name="Days">기간(일)</param>
+        </member>
+        <member name="M:Function.Util.Log.WLog_Exception(System.String,System.Exception)">
+            <summary>
+            에러 발생 로그 남긴다.
+            </summary>
+            <param name="strModule"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Function.Util.Log.datarow_singleLog(System.Data.DataRow)">
+            <summary>
+            Datarow 내용 로그를 만든다.
+            </summary>
+            <param name="dr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Util.Log.datarow_ModifyLog(System.Data.DataRow,System.Data.DataRow)">
+            <summary>
+            수정 datarow내용 로그를 만든다.
+            </summary>
+            <param name="sourcerow"></param>
+            <param name="modifyrow"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Function.Util.clsSystemEventLog">
+            <summary>
+            System Event Log 기록 Class
+            </summary>
+        </member>
+        <member name="M:Function.Util.clsSystemEventLog.#ctor(System.String,System.String)">
+            <summary>
+            인스턴스 생성
+            </summary>
+            <param name="strSource"></param>
+            <param name="strLog"></param>
+        </member>
+        <member name="T:Function.Util.XML">
+            <summary>
+            xml 관리 클래스
+            </summary>
+        </member>
+        <member name="M:Function.Util.XML.ReadNodeValue(System.String)">
+            <summary>
+            전체 Node경로 값을 검색한다.
+            </summary>
+            <param name="strNode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Util.XML.chSingleNode(System.String)">
+            <summary>
+            싱글 노드 경로를 변경한다.
+            </summary>
+            <param name="strNode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Util.XML.GetNodeList(System.String)">
+            <summary>
+            NodeList를 조회한다.
+            </summary>
+            <param name="strNode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Util.XML.GetSingleNodeValue(System.String)">
+            <summary>
+            Node에 값을 구한다.
+            </summary>
+            <param name="strNode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Util.XML.GetChildsNodeValues">
+            <summary>
+            하부 노드의 값을 구한다.
+            </summary>
+            <param name="strNode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Util.XML.GetSelectNodeValues(System.String)">
+            <summary>
+            특정 Lode에 값을 구한다.
+            </summary>
+            <param name="strNode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Util.XML.SetSingleNodeValue(System.String,System.String)">
+            <summary>
+            Node에 값을 저장한다.
+            </summary>
+            <param name="strNode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Util.XML.AddChild(System.String,System.String,System.String)">
+            <summary>
+            Child Node를 추가한다.
+            </summary>
+            <param name="strNode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Util.XML.AddChild(System.String,System.String)">
+            <summary>
+            Child Node를 추가한다.
+            </summary>
+            <param name="strNode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Util.XML.AddAttChild(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Attribute가 있는 Child Node를 추가한다.
+            </summary>
+            <param name="strNode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Util.XML.GetSingleNodeInnerXml(System.String)">
+            <summary>
+            InnerXml을 구한다.
+            </summary>
+            <param name="strNode"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Function.Util.XML.GetXmlNode">
+            <summary>
+            현재 xmlNode를 반환한다.
+            </summary>
+        </member>
+        <member name="M:Function.Util.XML.chNode2Root">
+            <summary>
+            현재 선택 Node를 루트로 변경..
+            </summary>
+        </member>
+        <member name="M:Function.Util.XML.Fnc.NodePath_Get(System.Xml.XmlNode)">
+            <summary>
+            현재 노드의 전체 경로를 반환한다.
+            </summary>
+            <param name="xn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Util.XML.XML_Create(Function.Util.XML.EncodingType,System.Boolean,Function.Util.XML.stNodeValue)">
+            <summary>
+            xml 문서를 만든다.
+            </summary>
+            <param name="eType"></param>
+            <param name="isStandAlone"></param>
+        </member>
+        <member name="F:Function.Util.XML.stNodeValue.Name">
+            <summary>
+            새 노드의 지역 이름입니다.
+            </summary>
+        </member>
+        <member name="F:Function.Util.XML.stNodeValue.preFix">
+            <summary>
+            새 노드의 접두사입니다.
+            (생략가능)
+            </summary>
+        </member>
+        <member name="F:Function.Util.XML.stNodeValue.namespaceUri">
+            <summary>
+            새 노드의 네임스페이스 URI입니다.
+            </summary>
+        </member>
+        <member name="F:Function.Util.XML.stNodeValue.Value">
+            <summary>
+            Attribute 설정시 값
+            </summary>
+        </member>
+        <member name="F:Function.Util.XML.stNodeValue.InnerText">
+            <summary>
+            Node설정시 내부 텍스트
+            </summary>
+        </member>
+        <member name="M:Function.Util.XML.stNodeValue.#ctor(System.String,System.Object)">
+            <summary>
+            속성용 값을 초기화 합니다.
+            </summary>
+            <param name="_Name"></param>
+            <param name="_Value">string 값입력</param>
+        </member>
+        <member name="M:Function.Util.XML.stNodeValue.#ctor(System.String,System.String)">
+            <summary>
+            node용 값을 초기화 합니다.
+            </summary>
+            <param name="_Name"></param>
+            <param name="_InnerText"></param>
+        </member>
+        <member name="M:Function.Util.XML.Node_Add(Function.Util.XML.stNodeValue,Function.Util.XML.stNodeValue[])">
+            <summary>
+            xml에 노드를 추가 한다.
+            </summary>
+            <param name="node"></param>
+            <param name="Atts">추가할 속성 없으면 null</param>
+        </member>
+        <member name="M:Function.Util.XML.Node_Attribute_Add(System.Xml.XmlNode,Function.Util.XML.stNodeValue[])">
+            <summary>
+            node에 속성을 추가 하여 준다.
+            </summary>
+            <param name="xn"></param>
+            <param name="Atts"></param>
+        </member>
+        <member name="T:Function.Util.cryptography">
+            <summary>
+            Key와 IV를 이용한 암호화/복호화 기능을 제공한다.
+            </summary>
+        </member>
+        <member name="P:Function.Util.cryptography.encoding">
+            <summary>
+            암호화에 사용할 인코딩 방식을 가져오거나 설정한다.
+            </summary>
+        </member>
+        <member name="P:Function.Util.cryptography.Key">
+            <summary>
+            암호화의 사용될 key를 가져오거나 설정한다.
+            </summary>
+        </member>
+        <member name="M:Function.Util.cryptography.GenKey">
+            <summary>
+            새로운 암호화 key를 생성한다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Function.Util.cryptography.IV">
+            <summary>
+            암호화의 사용될 IV를 가져오거나 설정한다.
+            </summary>
+        </member>
+        <member name="M:Function.Util.cryptography.GenIV">
+            <summary>
+            새로운 암호화 IV를 생성한다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Util.cryptography.Encrypting(System.String)">
+            <summary>
+            암호화 한다.
+            </summary>
+            <param name="_strSouceString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Util.cryptography.Decrypting(System.String)">
+            <summary>
+            복호화 한다.
+            </summary>
+            <param name="_strEncryptingString"></param>
+            <returns></returns>
+        </member>
+        <member name="E:Function.Comm.Serial.OnDataReceived">
+            <summary>
+            Receive 이벤트를 사용하기 위한 이벤트를 선언한다. 
+            </summary>
+        </member>
+        <member name="P:Function.Comm.Serial.PortName">
+            <summary>
+            Serial PortName
+            </summary>
+        </member>
+        <member name="P:Function.Comm.Serial.BaudRate">
+            <summary>
+            개체의 BaudRate를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:Function.Comm.Serial.Parity">
+            <summary>
+            개체의 패리티 비트를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:Function.Comm.Serial.DataBits">
+            <summary>
+            바이트당 데이터 비트의 표준 길이를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:Function.Comm.Serial.StopBits">
+            <summary>
+            바이트당 정지 비트의 표준 개수를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:Function.Comm.Serial.Handshake">
+            <summary>
+            데이터의 직렬 포트 전송을 위한 핸드셰이킹 프로토콜을 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:Function.Comm.Serial.IsOpen">
+            <summary>
+            직렬포트 열림 또는 닫힘 상태를 나타내는 값을 가져옵니다.
+            </summary>
+        </member>
+        <member name="M:Function.Comm.Serial.#ctor">
+            <summary>
+            클래스생성
+            </summary>
+        </member>
+        <member name="M:Function.Comm.Serial.#ctor(System.String,System.Int32,System.IO.Ports.Parity,System.Int32,System.IO.Ports.StopBits)">
+            <summary>
+            클래스생성
+            </summary>
+            <param name="portName"></param>
+            <param name="baudRate"></param>
+            <param name="parity"></param>
+            <param name="dataBits"></param>
+            <param name="stopBits"></param>
+        </member>
+        <member name="M:Function.Comm.Serial.#ctor(System.String,System.Int32,System.String,System.Int32,System.String)">
+            <summary>
+            클래스생성
+            </summary>
+            <param name="portName"></param>
+            <param name="baudRate"></param>
+            <param name="parity"></param>
+            <param name="dataBits"></param>
+            <param name="stopBits"></param>
+        </member>
+        <member name="M:Function.Comm.Serial.Open">
+            <summary>
+            새 직렬 포트 연결을 엽니다.
+            </summary>
+        </member>
+        <member name="M:Function.Comm.Serial.Close">
+            <summary>
+            포트 연결을 닫고, System.IO.Ports.SerialPort.IsOpen 속성을 false로 설정하고, 내부 System.IO.Stream
+            개체를 삭제합니다.
+            </summary>
+        </member>
+        <member name="F:Function.Comm.Serial.intRecieveWatingTime">
+            <summary>
+            수신 후 대기시간 : 신호가 끊어 들어오는 방지
+            </summary>
+        </member>
+        <member name="M:Function.Comm.Serial.String2Parity(System.String)">
+            <summary>
+            Parity Enum 형태로 변환
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Comm.Serial.String2stopBits(System.String)">
+            <summary>
+            StopBit Enum 형태로 변환
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Comm.Serial.Dispose">
+            <summary>
+            클래스를 해제 한다.
+            </summary>
+        </member>
+        <member name="T:Function.Comm.SocketClient">
+            <summary>
+            소켓 통신 클라이언트 클래스..
+            </summary>
+        </member>
+        <member name="F:Function.Comm.SocketClient.objClient">
+            <summary>
+            Client Socket 
+            </summary>
+        </member>
+        <member name="F:Function.Comm.SocketClient.strServerIP">
+            <summary>
+            Server의 IP
+            </summary>
+        </member>
+        <member name="F:Function.Comm.SocketClient.iPort">
+            <summary>
+            서버 포트 번호
+            </summary>
+        </member>
+        <member name="F:Function.Comm.SocketClient.evtReceived">
+            <summary>
+            Receive 이벤트를 사용하기 위한 변수를 선언한다. 
+            </summary>
+        </member>
+        <member name="M:Function.Comm.SocketClient.#ctor(System.String,System.Int32)">
+            <summary>
+            생성자
+            </summary>
+            <param name="pIP">서버 IP</param>
+            <param name="pPort">서버 Port</param>
+        </member>
+        <member name="T:Function.Comm.clsSocketServer">
+            <summary>
+            소켓서버 생성 Class
+            </summary>
+        </member>
+        <member name="M:Function.Comm.clsSocketServer.MyIp(System.Net.Sockets.AddressFamily)">
+            <summary>
+            현재 주소를 가져온다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Comm.clsSocketServer.GetHostAddress(System.String)">
+            <summary>
+            서버의 주소를 가져온다.
+            </summary>
+            <param name="strAddress"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Function.Comm.clsSocketServer.Start">
+            <summary>
+            서버를 시작 한다.
+            </summary>
+        </member>
+        <member name="M:Function.Comm.clsSocketServer.Stop">
+            <summary>
+            서버를 종료 한다.
+            </summary>
+        </member>
+        <member name="M:Function.Comm.clsSocketServer.OnClientConnect(System.IAsyncResult)">
+            <summary>
+            클라이언트 접속시 발생 한다.
+            </summary>
+            <param name="asyn"></param>
+        </member>
+        <member name="M:Function.Comm.clsSocketServer.WaitForData(System.Net.Sockets.Socket)">
+            <summary>
+            클라이언트로 부터 데이터 전송을 기다린다
+            </summary>
+            <param name="soc"></param>
+        </member>
+        <member name="M:Function.Comm.clsSocketServer.OnDataReceived(System.IAsyncResult)">
+            <summary>
+            클라이언트로 부터 데이터 수신시 발생 한다.
+            </summary>
+            <param name="asyn"></param>
+        </member>
+        <member name="M:Function.usrMessageBox.ShowMessage(System.String,System.String,Function.usrMessageBox.enMessageType)">
+            <summary>
+            메시지를 보여준다.
+            </summary>
+            <param name="strMsg1"></param>
+            <param name="strMsg2"></param>
+            <param name="enType"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Function.usrMessageBox.components">
+            <summary> 
+            필수 디자이너 변수입니다.
+            </summary>
+        </member>
+        <member name="M:Function.usrMessageBox.Dispose(System.Boolean)">
+            <summary> 
+            사용 중인 모든 리소스를 정리합니다.
+            </summary>
+            <param name="disposing">관리되는 리소스를 삭제해야 하면 true이고, 그렇지 않으면 false입니다.</param>
+        </member>
+        <member name="M:Function.usrMessageBox.InitializeComponent">
+            <summary> 
+            디자이너 지원에 필요한 메서드입니다. 
+            이 메서드의 내용을 코드 편집기로 수정하지 마십시오.
+            </summary>
+        </member>
+        <member name="T:System.IO.Ports.BaudRate">
+            <summary>
+            바우드레이트 : bit/sec
+            </summary>
+        </member>
+        <member name="T:System.IO.Ports.DataBits">
+            <summary>
+            데이터비트 bit
+            </summary>
+        </member>
+    </members>
+</doc>
