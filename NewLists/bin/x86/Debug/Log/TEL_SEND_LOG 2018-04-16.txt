@@ -1,0 +1,42 @@
+[10:30:18] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[10:37:54] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]개체 참조가 개체의 인스턴스로 설정되지 않았습니다.
+[10:39:50] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Upbit공지][암호화폐] eosDAC 에어드랍 지원을 위한 스냅샷 완료
+[10:39:58] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Upbit공지][입출금] 코모도 입출금 일시 점검
+[10:39:59] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Upbit공지][거래] 원화 마켓 신규 상장 (골렘 GNT)
+[10:39:59] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Upbit공지][안내] 상장 관련 유언비어에 주의하세요. 
+[10:40:00] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Upbit공지][입출금] 네오 입출금 일시 점검 (완료)
+[10:40:00] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Upbit공지][이벤트] 3월 거래수수료 페이백 지급!
+[10:40:01] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Upbit공지][입출금] 에이다 입출금 일시 점검 (완료)
+[10:40:02] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Upbit공지][암호화폐] NEO 보유자 GAS 지급 계획 안내 
+[10:40:02] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Upbit공지][주의] 업비트 계정 대여 사기에 주의하세요! 
+[10:40:03] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규Upbit공지][업데이트] 매수평균가 수정 기능 추가 안내
+[10:46:17] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[10:52:34] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규huobi코리아공지]릴레이 이벤트 ? ‘후오비 에피소드 1: 새로운 시작’
+[10:52:42] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규huobi코리아공지]4월 15일 19시(한국기준) BTS/USDT 거래개시
+[10:52:42] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규huobi코리아공지]하닥스 4월11일 15:30(한국기준)에 18T 상장
+[10:52:43] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규huobi코리아공지]ZRX/ETH 거래 개시
+[10:52:43] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규huobi코리아공지]EOS 보유 고객 eosDAC 에어드롭 공지
+[10:52:44] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규huobi코리아공지]4월 10일 19시(한국기준) AST/ETH 거래 개시
+[10:52:45] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규huobi코리아공지]CoinMeet 4월 9일 18시(한국기준) 입출금재개
+[10:52:45] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규huobi코리아공지]4월 9일 17시(한국기준) KNC/ETH 거래 개시
+[10:52:46] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규huobi코리아공지]4월 9일 19시(한국기준) ONT/USDT 거래 개시
+[10:52:46] 미전송[Mtype]Admin[ChatID1373476627:NewList_Error][첫실행후바로][신규huobi코리아공지]CoinMeet의 명칭 변경에 대한 공지
+[13:06:04] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[13:06:55] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[13:07:21] 미전송[Mtype]NewNotice[ChatID1194481595:NewList_Test][신규Bithumb공지][완료] eosDAC 에어드랍 관련 공지 (4/15 오전 10시) 
+https://bithumb.cafe/archives/25592
+[13:08:21] 미전송[Mtype]NewNotice[ChatID1194481595:NewList_Test][신규Upbit공지][암호화폐] eosDAC 에어드랍 지원을 위한 스냅샷 완료 
+https://upbit.com/service_center/notice?326
+[13:08:21] 미전송[Mtype]NewNotice[ChatID1194481595:NewList_Test][신규huobi코리아공지]4월 15일 19시(한국기준) BTS/USDT 거래개시 
+https://www.huobi.co.kr/ko-KR/notices/61
+[13:11:18] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[13:11:58] 미전송[Mtype]NewNotice[ChatID1194481595:NewList_Test][신규huobi코리아공지]4월 15일 19시(한국기준) BTS/USDT 거래개시 
+https://www.huobi.co.kr/ko-KR/notices/61
+[13:11:58] 미전송[Mtype]NewNotice[ChatID1194481595:NewList_Test][신규huobi코리아공지]하닥스 4월11일 15:30(한국기준)에 18T 상장 
+https://www.huobi.co.kr/ko-KR/notices/58
+[15:01:20] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[15:01:42] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[15:02:24] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[15:02:54] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[15:03:20] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.
+[15:30:36] 미전송[Mtype]Error[ChatID1373476627:NewList_Error]NewLists 프로그램이 시작 되었음.

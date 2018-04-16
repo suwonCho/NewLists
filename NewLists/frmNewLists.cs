@@ -44,6 +44,13 @@ namespace NewLists
         /// </summary>
         Function.Util.Log cTelLg;
 
+		/// <summary>
+		/// 텔레그램 메시지 전송 큐 - 쓰레드에서 서로 보낼때 
+		/// </summary>
+		Queue<System.String> queTelMsg = new Queue<string>();
+
+		
+
         public frmNewLists()
 		{
 			InitializeComponent();
@@ -370,12 +377,59 @@ namespace NewLists
 
 			try
 			{
-				string html = json_get_up("https://upbit.com/service_center/notice?id=326");
+				string html = json_get(citem.Url);
+
 
 
 				int cnt = 0;
+				int idx = 0;
+				int idx2 = 0;
+				string smark = "id=>";
+				string smark2 = ":title=>\"";
+				string key;
+				string notice;
+				bool isNew;
+
+				while (true)
+				{
+					idx = html.IndexOf(smark, idx);
+
+					if (idx < 0) break;
+
+					//id 숫자 찾기
+					idx = idx + smark.Length;
+					idx2 = html.IndexOf(",", idx + 1);
+
+					key = html.Substring(idx, idx2 - idx);
+
+					//제목 찾기
+					idx = idx2;
+					idx = html.IndexOf(smark2, idx);
+					idx += smark2.Length;
+					idx2 = html.IndexOf("\"", idx);
+
+					notice = html.Substring(idx, idx2 - idx);
+
+					idx = idx2;
+
+					isNew = db.isNewNotice(citem.Name, key, notice);
+
+					if (isNew)
+					{   //신규 항목임
+						Thread.Sleep(200);
+
+						Notice_Add(citem, key, notice);
+					}
+
+
+					cnt++;
+
+					//Console.WriteLine("[{0}]{1}  / {2}",cnt, url, notice);				
+				}
 
 				citem.iRunCnt = 1;
+
+				if (cnt != 5) TelegramMsgSend("Error", string.Format("업빗 공지가 5건이 아닙니다. {0}건", cnt));
 
 				Function.form.control.Invoke_ListView_SubItem_Text(lstNew, citem.lstItem, 2, cnt.ToString());
 				Function.form.control.Invoke_ListView_SubItem_Text(lstNew, citem.lstItem, 3, DateTime.Now.ToString());
@@ -384,7 +438,13 @@ namespace NewLists
 			}
 			catch (Exception ex)
 			{
-				ProcException(ex, "thUpbitNotice", false);
+				if (citem.iErrCnt > 3)
+				{
+					ProcException(ex, "thUpbitNotice", false);
+					citem.iErrCnt = 0;
+				}
+				else
+					citem.iErrCnt++;
 
 				Function.form.control.Invoke_ListView_SubItem_Text(lstNew, citem.lstItem, 2, "0");
 				Function.form.control.Invoke_ListView_SubItem_Text(lstNew, citem.lstItem, 3, DateTime.Now.ToString());
@@ -438,7 +498,7 @@ namespace NewLists
 
 					if(isNew)
 					{   //신규 항목임
-						Thread.Sleep(500);
+						Thread.Sleep(200);
 
 						Notice_Add(citem, url, notice);
 					}
@@ -458,10 +518,18 @@ namespace NewLists
 				Function.form.control.Invoke_ListView_SubItem_Text(lstNew, citem.lstItem, 3, DateTime.Now.ToString());
 				Function.form.control.Invoke_ListView_SubItem_Color(lstNew, citem.lstItem, Color.White);
 
+				citem.iErrCnt = 0;
+
 			}
 			catch (Exception ex)
 			{
-				ProcException(ex, "thUpbitNotice", false);
+				if (citem.iErrCnt > 3)
+				{
+					ProcException(ex, "thBithumbNotice", false);
+					citem.iErrCnt = 0;
+				}
+				else
+					citem.iErrCnt++;
 
 				Function.form.control.Invoke_ListView_SubItem_Text(lstNew, citem.lstItem, 2, "0");
 				Function.form.control.Invoke_ListView_SubItem_Text(lstNew, citem.lstItem, 3, DateTime.Now.ToString());
@@ -469,6 +537,184 @@ namespace NewLists
 			}
 
 		}
+
+
+
+
+		private void thHoubiNotice(object obj)
+		{
+			clsItem citem = obj as clsItem;
+
+			if (citem == null) return;
+
+			try
+			{
+				string html = json_get(citem.Url);
+
+
+
+				int cnt = 0;
+				int idx = 0;
+				int idx2 = 0;
+				string smark = "\"id\":";
+				string smark2 = "\"title\":\"";
+				string key;
+				string notice;
+				bool isNew;
+
+				while (true)
+				{
+					idx = html.IndexOf(smark, idx);
+
+					if (idx < 0) break;
+
+					//id 숫자 찾기
+					idx = idx + smark.Length;
+					idx2 = html.IndexOf(",", idx + 1);
+
+					key = html.Substring(idx, idx2 - idx);
+
+					//제목 찾기
+					idx = idx2;
+					idx = html.IndexOf(smark2, idx);
+					idx += smark2.Length;
+					idx2 = html.IndexOf("\",", idx);
+
+					notice = html.Substring(idx, idx2 - idx);
+
+					idx = idx2;
+
+					isNew = db.isNewNotice(citem.Name, key, notice);
+
+					if (isNew)
+					{   //신규 항목임
+						Thread.Sleep(200);
+
+						Notice_Add(citem, key, notice);
+					}
+
+
+					cnt++;
+
+					//Console.WriteLine("[{0}]{1}  / {2}",cnt, url, notice);				
+				}
+
+				citem.iRunCnt = 1;
+
+				if (cnt != 5) TelegramMsgSend("Error", string.Format("후오비 공지가 5건이 아닙니다. {0}건", cnt));
+
+				Function.form.control.Invoke_ListView_SubItem_Text(lstNew, citem.lstItem, 2, cnt.ToString());
+				Function.form.control.Invoke_ListView_SubItem_Text(lstNew, citem.lstItem, 3, DateTime.Now.ToString());
+				Function.form.control.Invoke_ListView_SubItem_Color(lstNew, citem.lstItem, Color.White);
+
+				citem.iErrCnt = 0;
+
+			}
+			catch (Exception ex)
+			{
+				if (citem.iErrCnt > 3)
+				{
+					ProcException(ex, "thHoubiNotice", false);
+					citem.iErrCnt = 0;
+				}
+				else
+					citem.iErrCnt++;
+
+
+				Function.form.control.Invoke_ListView_SubItem_Text(lstNew, citem.lstItem, 2, "0");
+				Function.form.control.Invoke_ListView_SubItem_Text(lstNew, citem.lstItem, 3, DateTime.Now.ToString());
+				Function.form.control.Invoke_ListView_SubItem_Color(lstNew, citem.lstItem, Color.Red);
+			}
+
+		}
+
+
+
+
+		private void thCoinnestNotice(object obj)
+		{
+			clsItem citem = obj as clsItem;
+
+			if (citem == null) return;
+
+			try
+			{
+				string html = json_get(citem.Url);
+
+				int cnt = 0;
+				int idx = 0;
+				int idx2 = 0;
+				string smark = "<div class=\"entry-thumb\">";
+				string url;
+				string notice;
+				bool isNew;
+
+				while (true)
+				{
+					idx = html.IndexOf(smark, idx);
+
+					if (idx < 0) break;
+
+					//공지 주소 조회
+					idx = html.IndexOf("<a href=\"", idx + smark.Length);
+					idx2 = html.IndexOf("\">", idx + 1);
+
+					url = html.Substring(idx + 9, idx2 - idx - 9);
+
+					//제목 찾기
+					idx = idx2;
+					idx = html.IndexOf(url + "\">", idx);
+					idx += 2;
+					idx2 = html.IndexOf("</a>", idx);
+
+					notice = html.Substring(idx + url.Length, idx2 - idx - url.Length);
+
+					idx = idx2;
+
+					isNew = db.isNewNotice(citem.Name, url, notice);
+
+					if (isNew)
+					{   //신규 항목임
+						Thread.Sleep(200);
+
+						Notice_Add(citem, url, notice);
+					}
+
+
+					cnt++;
+
+					//Console.WriteLine("[{0}]{1}  / {2}",cnt, url, notice);				
+				}
+
+				citem.iRunCnt = 1;
+
+				if (cnt != 9) TelegramMsgSend("Error", string.Format("빗썸공지가 9건이 아닙니다. {0}건", cnt));
+
+
+				Function.form.control.Invoke_ListView_SubItem_Text(lstNew, citem.lstItem, 2, cnt.ToString());
+				Function.form.control.Invoke_ListView_SubItem_Text(lstNew, citem.lstItem, 3, DateTime.Now.ToString());
+				Function.form.control.Invoke_ListView_SubItem_Color(lstNew, citem.lstItem, Color.White);
+
+				citem.iErrCnt = 0;
+
+			}
+			catch (Exception ex)
+			{
+				if (citem.iErrCnt > 3)
+				{
+					ProcException(ex, "thBithumbNotice", false);
+					citem.iErrCnt = 0;
+				}
+				else
+					citem.iErrCnt++;
+
+				Function.form.control.Invoke_ListView_SubItem_Text(lstNew, citem.lstItem, 2, "0");
+				Function.form.control.Invoke_ListView_SubItem_Text(lstNew, citem.lstItem, 3, DateTime.Now.ToString());
+				Function.form.control.Invoke_ListView_SubItem_Color(lstNew, citem.lstItem, Color.Red);
+			}
+
+		}
+
 
 
 		private int NewListCompByArray(clsItem citem, ArrayList alst, string header, int iDelRowCountMax)
@@ -691,7 +937,12 @@ namespace NewLists
 
 			switch (item.Idx)
 			{
-				case 5:     //공지 전송
+				case 5:     //업빗
+					log += string.Format("[신규{0}]{1} \r\nhttps://upbit.com/service_center/notice?id={2}", item.Name, title, url);
+					break;
+				case 7:		//후오비
+					log += string.Format("[신규{0}]{1} \r\nhttps://www.huobi.co.kr/ko-KR/notices/{2}", item.Name, title, url);
+					break;
 				case 6:					
 						log += string.Format("[신규{0}]{1} \r\n{2}", item.Name, title, url);
 					break;
@@ -744,8 +995,12 @@ namespace NewLists
                 else
                     msg = "NewLists 프로그램이 동작중.....";
 
+				//시작시간
+				Function.form.control.Invoke_usrInputBox_Value(inpHeadChkTime, Fnc.Date2String(DateTime.Now, Fnc.enDateType.DateTime));
+				Function.form.control.Invoke_usrInputBox_Value(inpHeadNext, string.Format("(+{0}분){1}", vari.ChkInterval, Fnc.Date2String(DateTime.Now.AddMinutes(vari.ChkInterval), Fnc.enDateType.DateTime)));
 
-                TelegramMsgSend("Error", msg);
+
+				TelegramMsgSend("Error", msg);
             }
             catch (Exception ex)
             {
@@ -755,38 +1010,40 @@ namespace NewLists
 
 
         public async void TelegramMsgSend(string mType, string msg)
-        {
-
-            try
-            {
-                DataTable dt = db.ChatID_Get(mType);
+        {	
+				try
+				{
+					DataTable dt = db.ChatID_Get(mType);
 
 #if (!DEBUG)
-                await _client.Connect();
+					await _client.Connect();
 
-                if (!_client.isAuth())
-                {
+					//_client.Connect();
 
-                    SetMessage(true, "메시지 전송 실패-인증필요.", false);
-                    return;
-                }
+					if (!_client.isAuth())
+					{
+
+						SetMessage(true, "메시지 전송 실패-인증필요.", false);
+						return;
+					}
 #endif
 
-                foreach (DataRow dr in dt.Rows)
-                {
+					foreach (DataRow dr in dt.Rows)
+					{
 #if (!DEBUG)
-                    await _client.SendMessageToChat(enChatsInfoType.id, Fnc.obj2String(dr["ChatID"]), msg);
-					cTelLg.WLog("[Mtype]{0}[ChatID{1}:{2}]{3}",mType, dr["chatid"], dr["desc"], msg);
+						await _client.SendMessageToChat(enChatsInfoType.id, Fnc.obj2String(dr["ChatID"]), msg);
+
+						//_client.SendMessageToChat(enChatsInfoType.id, Fnc.obj2String(dr["ChatID"]), msg);
+						cTelLg.WLog("[Mtype]{0}[ChatID{1}:{2}]{3}", mType, dr["chatid"], dr["desc"], msg);
 #else
 					cTelLg.WLog("미전송[Mtype]{0}[ChatID{1}:{2}]{3}",mType, dr["chatid"], dr["desc"], msg);
 #endif
-                }
-            }
-            catch(Exception ex)
-            {
-                ProcException(ex, "TelegramMsgSend");
-            }
-
+					}
+				}
+				catch (Exception ex)
+				{
+					ProcException(ex, "TelegramMsgSend");
+				}
         }
 
 
@@ -797,6 +1054,9 @@ namespace NewLists
 			this.Text += "[DEBUG]";
 #endif
 			this.Text += " v." + Application.ProductVersion;
+
+			//시작시간
+			inpHeadStartTime.Value = Fnc.Date2String(DateTime.Now, Fnc.enDateType.DateTime);
 
 
             //텔레그램 전송 로그            
@@ -819,8 +1079,12 @@ namespace NewLists
                 ,"BinanceWallet"				//2
 				,"Upbit"						//3
 				,"bittrex(미동작)"				//4
-				,"Upbit공지(미동작)"			//5
+				,"Upbit공지"						//5
 				,"Bithumb공지"					//6
+				,"huobi코리아공지"				//7
+				,"huobi프로공지"					//8
+				,"Coinnest공지(미사용)"			//9
+
 			}; 
             sUrls = new string[]
             {
@@ -829,9 +1093,11 @@ namespace NewLists
                 ,"https://www.binance.com/assetWithdraw/getAllAsset.html"							//바이낸스 지갑
 				,"https://crix-api.upbit.com/v1/crix/trends/change_rate"							//upbit 가격
 				,"https://bittrex.com/api/v1.1/public/getmarketsummaries"							//비트렉스 가격
-				,"https://api-manager.upbit.com/api/v1/notices?page=1&per_page=10"					//업비트 공지
+				,"https://api-manager.upbit.com/api/v1/notices?page=1&per_page=5"					//업비트 공지
 				,"https://bithumb.cafe/notice"														//빗썸공지
-				,"https://api.huobi.co.kr/v1/notice/list?language=ko-KR&limit=10&currPage=1"		//후오비코리아 공지
+				,"https://api.huobi.co.kr/v1/notice/list?language=ko-KR&limit=5&currPage=1"		    //후오비코리아 공지
+				,""
+				,"https://www.coinnest.co.kr/gonggao/"												//코인네스트 공지
 			};
 
 			cItems = new clsItem[sItems.Length];
@@ -862,11 +1128,23 @@ namespace NewLists
 						break;
 
 					case 3:
-						tmrWork[idx] = new System.Threading.Timer(new TimerCallback(thUpbit), cItems[idx], 1000, 9000);
+						tmrWork[idx] = new System.Threading.Timer(new TimerCallback(thUpbit), cItems[idx], 1000, 5000);
+						break;
+
+					case 5:
+						tmrWork[idx] = new System.Threading.Timer(new TimerCallback(thUpbitNotice), cItems[idx], 1000, 5000);
 						break;
 
 					case 6:
 						tmrWork[idx] = new System.Threading.Timer(new TimerCallback(thBithumbNotice), cItems[idx], 1000, 5000);
+						break;
+
+					case 7:
+						tmrWork[idx] = new System.Threading.Timer(new TimerCallback(thHoubiNotice), cItems[idx], 1000, 5000);
+						break;
+
+					case 8:
+						//tmrWork[idx] = new System.Threading.Timer(new TimerCallback(thCoinnestNotice), cItems[idx], 1000, 5000);
 						break;
 
 				}
@@ -877,8 +1155,8 @@ namespace NewLists
 			}
 
 
-            //60분간격으로 문자 보냄
-            tmrChkAlive = new System.Threading.Timer(new TimerCallback(thChkAlive), null, 1000, 1000 * 60 * 60);
+            //설정 ?분 간격으로 문자 보냄
+            tmrChkAlive = new System.Threading.Timer(new TimerCallback(thChkAlive), null, 1000, 1000 * 60 * vari.ChkInterval);
 
 
 
@@ -888,7 +1166,7 @@ namespace NewLists
 		{
 			int idx;
             ParameterizedThreadStart parm = null;
-            idx = 6;
+            idx = 7;
 
             switch(idx)
             {
@@ -917,6 +1195,14 @@ namespace NewLists
 
 				case 6:     //빗썸 공지
 					parm = new ParameterizedThreadStart(thBithumbNotice);
+					break;
+
+				case 7:     //후오비 공지
+					parm = new ParameterizedThreadStart(thHoubiNotice);
+					break;
+
+				case 8:     //코인네스트 공지
+					parm = new ParameterizedThreadStart(thCoinnestNotice);
 					break;
 
 
@@ -1046,6 +1332,12 @@ namespace NewLists
 			{
 				ProcException(ex, "btnHPConn_Click", false);
 			}
+		}
+
+		private void frmNewLists_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			if (Function.clsFunction.ShowMsg("종료확인", "프로그램을 종료 하시겠습니까?", Function.form.frmMessage.enMessageType.YesNo) != DialogResult.Yes) e.Cancel = true;
+
 		}
 	}
 }

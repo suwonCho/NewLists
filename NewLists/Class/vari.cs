@@ -32,7 +32,10 @@ namespace NewLists
 
 		public static Function.Setting Setting;
 
-
+		/// <summary>
+		/// 프로그램 확인 메시지 전송 간격(분)
+		/// </summary>
+		public static int ChkInterval = 60;
 
         /// <summary>
         /// 텔레그램 연결 전화 번호

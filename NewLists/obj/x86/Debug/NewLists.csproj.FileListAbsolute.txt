@@ -17,7 +17,6 @@ D:\_TASK\_Personal\NewLists\NewLists\bin\x86\Debug\Function.xml
 D:\_TASK\_Personal\NewLists\NewLists\bin\x86\Debug\Telegram.Massenger.pdb
 D:\_TASK\_Personal\NewLists\NewLists\bin\x86\Debug\Telegram.Massenger.xml
 D:\_TASK\_Personal\NewLists\NewLists\bin\x86\Debug\System.Data.SQLite.pdb
-D:\_TASK\_Personal\NewLists\NewLists\bin\x86\Debug\System.Data.SQLite.dll.config
 D:\_TASK\_Personal\NewLists\NewLists\bin\x86\Debug\TeleSharp.TL.pdb
 D:\_TASK\_Personal\NewLists\NewLists\bin\x86\Debug\TLSharp.Core.pdb
 D:\_TASK\_Personal\NewLists\NewLists\bin\x86\Debug\BigMath.xml
@@ -28,3 +27,4 @@ D:\_TASK\_Personal\NewLists\NewLists\obj\x86\Debug\NewLists.Properties.Resources
 D:\_TASK\_Personal\NewLists\NewLists\obj\x86\Debug\NewLists.csproj.GenerateResource.Cache
 D:\_TASK\_Personal\NewLists\NewLists\obj\x86\Debug\NewLists.exe
 D:\_TASK\_Personal\NewLists\NewLists\obj\x86\Debug\NewLists.pdb
+D:\_Task\_Personal\NewLists\NewLists\bin\x86\Debug\Oracle.DataAccess.dll
